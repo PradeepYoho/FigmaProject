@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="px-4 md:px-6">
+    <div className="px-2 md:px-6">
     
       <div className="flex justify-between items-center mb-3">
         <button
