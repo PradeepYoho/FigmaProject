@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="px-2 md:px-6">
+    <div className="p-2">
     
       <div className="flex justify-between items-center mb-3">
         <button
@@ -68,14 +68,14 @@ const Dashboard: React.FC = () => {
       </div>
 
   
-      <div className="mb-7 ml-2">
+      <div className="mb-6">
         <p className="text-[22px] font-semibold text-[#0E2B56] font-montserrat">
           Graphs & Trends
         </p>
       </div>
 
       
-     <div className="flex flex-wrap justify-between gap-6 mb-5">
+     <div className="flex flex-wrap justify-between">
  
   <div className="w-full md:w-[48%] bg-[rgba(200,246,255,0.5)] p-6 rounded-xl shadow-md">
     <h3 className="text-lg font-semibold text-[#0E2B56] mb-4">
