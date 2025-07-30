@@ -17,11 +17,11 @@ const LayoutsFile: React.FC = () => {
           style={{ backgroundImage: `url(${blurbg})` }}
         >
         
-          <div className="sticky top-0 z-1">
+         <div className="fixed  left-10 w-[95%] z-50">
             <Navbar />
           </div>
 
-          <div className="p-2">
+          <div className="p-2 pt-10">
             <Outlet />
           </div>
         </div>
