@@ -18,7 +18,7 @@ const Banner = () => {
       <img
         src={barathidasanBanner}
         alt="University Banner"
-        className="w-full h-94 object-cover" />
+        className="w-full h-64 object-cover" />
     </div>
   )
 }
