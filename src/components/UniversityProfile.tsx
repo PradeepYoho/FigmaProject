@@ -9,12 +9,13 @@ import aboutlogo from "../assets/aboutLogo.png";
 import location from "../assets/location.png";
 import email from "../assets/email.png";
 import phone from "../assets/Call.png";
+import { Link } from "react-router-dom";
 
 const UniversityProfile: React.FC = () => {
   return (
     <div className="p-6">
       <div className="rounded-lg overflow-hidden">
-        <div className="relative h-[90px] flex items-center gap-4 px-4 py-[19px] rounded-t-[12px] bg-[#003E6B]">
+        <div className="relative h-[60px] flex items-center gap-4 px-4 py-[19px] rounded-t-[12px] bg-[#003E6B]">
           <div className="w-6 h-6 flex justify-center items-center">
             <IoIosArrowBack  className="w-6 h-6 text-white"/>
 
@@ -37,22 +38,29 @@ const UniversityProfile: React.FC = () => {
       <div className="mt-4">
        <div className="flex gap-4 mt-2">
  
-  <button className="flex items-center gap-[10px] w-[161px] h-[48px] px-4 py-[14px] border border-[#003E6B] rounded-[12px] text-[#003E6B] bg-transparent hover:bg-[#003E6B] hover:text-white transition">
-    <FaUser className="w-[16px] h-[17.5px]" />
-    <span className="text-base font-semibold">About</span>
-  </button>
+<Link
+  to="/about"
+  className="flex items-center gap-[10px] w-[161px] h-[48px] px-4 py-[14px] border border-[#003E6B] rounded-[12px] text-[#003E6B] bg-transparent hover:bg-[#003E6B] hover:text-white transition"
+>
+  <FaUser className="w-[16px] h-[17.5px]" />
+  <span className="text-base font-semibold">About</span>
+</Link>
 
+<Link
+  to="/profile"
+  className="flex items-center gap-[10px] w-[161px] h-[48px] px-4 py-[14px] rounded-[12px] bg-[#003E6B] text-white hover:bg-[#002a4c] transition"
+>
+  <img src={bookCheck} alt="Profile" className="w-[16px] h-[17.5px]" />
+  <span className="text-base font-semibold">Profile</span>
+</Link>
 
-  <button className="flex items-center gap-[10px] w-[161px] h-[48px] px-4 py-[14px] rounded-[12px] bg-[#003E6B] text-white hover:bg-[#002a4c] transition">
-    <img src={bookCheck} alt="Profile" className="w-[16px] h-[17.5px] text-white " />
-    <span className="text-base font-semibold">Profile</span>
-  </button>
-
-
-  <button className="flex items-center gap-[10px] w-[161px] h-[48px] px-4 py-[14px] border border-[#003E6B] rounded-[12px] text-[#003E6B] bg-transparent hover:bg-[#003E6B] hover:text-white transition">
-    <img src={contacts} alt="Courses" className="w-[16px] h-[17.5px]" />
-    <span className="text-base font-semibold">Courses</span>
-  </button>
+<Link
+  to="/courses"
+  className="flex items-center gap-[10px] w-[161px] h-[48px] px-4 py-[14px] border border-[#003E6B] rounded-[12px] text-[#003E6B] bg-transparent hover:bg-[#003E6B] hover:text-white transition"
+>
+  <img src={contacts} alt="Courses" className="w-[16px] h-[17.5px]" />
+  <span className="text-base font-semibold">Courses</span>
+</Link>
 </div>
 
       </div>
