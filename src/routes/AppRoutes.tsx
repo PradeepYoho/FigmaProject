@@ -3,6 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LayoutsFile from '../layouts/LayoutsFile';
 import UniversityProfile from '../components/UniversityProfile';
 import Home from '../pages/Home';
+import Clock from '../NavBarLinks/Clock';
+import Calendar from '../NavBarLinks/Calendar';
+import Users from '../NavBarLinks/Users';
+import Institute from '../NavBarLinks/Institute';
+import Settings from '../NavBarLinks/Settings';
+import Notification from '../NavBarLinks/Notification';
+import Payment from '../NavBarLinks/Payment';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -12,14 +19,15 @@ const AppRoutes: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
            <Route path="/profile" element={<UniversityProfile />} />
-          {/*
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/clock" element={<Clock />} />
-          <Route path="/wallet" element={<Wallet />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/institute" element={<Institute />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/notifications" element={<Notifications />} /> */}
+           <Route path="/calendar" element={<Calendar/>} />
+          <Route path="/payment" element={<Payment/>} />
+          <Route path="/users" element={<Users/>} /> 
+          <Route path="/clock" element={<Clock/>} />
+          <Route path="/institute" element={<Institute/>} />
+          <Route path="/settings" element={<Settings/>} />
+          <Route path="/notifications" element={<Notification/>} />
+         
+
         </Route>
       </Routes>
     </Router>
