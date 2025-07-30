@@ -1,5 +1,5 @@
 
-const Settings = () => {
+const SidebarSettings = () => {
   return (
         <div className="w-1/4 bg-white/10 rounded-xl p-4 backdrop-blur-md">
           <h2 className="text-lg font-semibold mb-4">Settings</h2>
@@ -27,4 +27,4 @@ const Settings = () => {
   )
 }
 
-export default Settings;
+export default SidebarSettings;
