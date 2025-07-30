@@ -11,6 +11,7 @@ import Settings from '../NavBarLinks/Settings';
 import Notification from '../NavBarLinks/Notification';
 import Payment from '../NavBarLinks/Payment';
 import Edit from '../components/Edit';
+import InstituteDetails from '../components/InstituteDetails';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -27,8 +28,8 @@ const AppRoutes: React.FC = () => {
           <Route path="/institute" element={<Institute/>} />
           <Route path="/settings" element={<Settings/>} />
           <Route path="/edit" element={<Edit />} />
-                    <Route path="/notifications" element={<Notification/>} />
-         
+          <Route path="/personal-info" element={<InstituteDetails />} />
+          <Route path="/notifications" element={<Notification/>} />
 
         </Route>
       </Routes>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const InstituteDetails = () => {
 
   return (
-        <div className="w-3/4 bg-white/10 rounded-xl p-6">
+        <div className="bg-white/10 rounded-xl p-6">
           <h2 className="text-xl font-semibold mb-6">Institute Details</h2>
 
 <div className="grid grid-cols-2 gap-x-6 gap-y-4">
