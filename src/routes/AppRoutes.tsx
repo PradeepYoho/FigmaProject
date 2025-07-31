@@ -8,7 +8,13 @@ import Calendar from '../NavBarLinks/Calendar';
 import Users from '../NavBarLinks/Users';
 import Institute from '../NavBarLinks/Institute';
 import Settings from '../NavBarLinks/Settings';
-import Notification from '../NavBarLinks/Notification';
+
+
+import PaymentTable from '../NavBarLinks/Payment';
+import SubscriptionPlans from '../components/Subscription';
+import SubscriptionForm from '../components/SubscriptionsForm';
+import NotificationTable from '../NavBarLinks/NotificationTable';
+import Notification from '../NavBarLinks/NotificationTable';
 import Payment from '../NavBarLinks/Payment';
 import Edit from '../components/Edit';
 
@@ -21,11 +27,14 @@ const AppRoutes: React.FC = () => {
           <Route path="/home" element={<Home />} />
            <Route path="/profile" element={<UniversityProfile />} />
            <Route path="/calendar" element={<Calendar/>} />
-          <Route path="/payment" element={<Payment/>} />
+          <Route path="/payment" element={<PaymentTable/>} />
           <Route path="/users" element={<Users/>} /> 
           <Route path="/clock" element={<Clock/>} />
           <Route path="/institute" element={<Institute/>} />
           <Route path="/settings" element={<Settings/>} />
+          <Route path="/notifications" element={<NotificationTable/>} />
+          <Route path ="/subscriptions" element ={<SubscriptionPlans/>} />
+          <Route path ="/add-institute" element ={<SubscriptionForm/>} />
           <Route path="/edit" element={<Edit />} />
                     <Route path="/notifications" element={<Notification/>} />
          
