@@ -14,7 +14,7 @@ const feeData: Fee[] = Array(6).fill({
   institute: "JD",
   plan: "Basic Plan",
   issueDate: "2-24-2025 / 4-27-2025",
-  amount: "$0",
+  amount: "0",
 });
 
 const PaymentTable: React.FC = () => {
@@ -22,7 +22,7 @@ const PaymentTable: React.FC = () => {
     <div className="pt-15 text-white font-sans">
       <h2 className="text-lg font-semibold mb-6">Fees</h2>
 
-   
+     
       <div className="grid grid-cols-6 text-lg text-white/80 font-medium px-4 py-3 rounded-md bg-[#0E2B56] mb-4">
         <div>ID</div>
         <div>Institute Name</div>
@@ -32,19 +32,24 @@ const PaymentTable: React.FC = () => {
         <div>Actions</div>
       </div>
 
-      
+     
       <div className="space-y-3">
         {feeData.map((fee, index) => (
           <div
             key={index}
             className="grid grid-cols-6 items-center bg-white/10 backdrop-blur-lg rounded-xl px-4 py-3 text-lg border border-white/10 hover:bg-white/20 transition"
           >
-            <div>{fee.id}</div>
-            <div>{fee.institute}</div>
-            <div>{fee.plan}</div>
-            <div>{fee.issueDate}</div>
-            <div>{fee.amount}</div>
-            <div>
+            <div className="flex flex-col items-center justify-center">
+              <span className="text-sm font-semibold">#{index}</span>
+              <span>{fee.id}</span>
+            </div>
+
+            <div className="flex items-center justify-center">{fee.institute}</div>
+            <div className="flex items-center justify-center">{fee.plan}</div>
+            <div className="flex items-center justify-center">{fee.issueDate}</div>
+            <div className="flex items-center justify-center">{fee.amount}</div>
+
+            <div className="flex items-center justify-center">
               <Eye className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
             </div>
           </div>

@@ -14,9 +14,9 @@ const Dashboard: React.FC = () => {
   return (
     <div className="p-2">
     
-      <div className="flex justify-between items-center mb-3">
+      <div className="flex mb-3">
         <button
-          className="bg-white text-[#0E2B56] py-3 px-4 rounded-lg flex items-center space-x-2"
+          className="bg-white text-[#0E2B56] py-3 px-2 rounded-lg flex items-center space-x-2"
           onClick={toggleFilter}
         >
           <img src={filter} alt="description" className="w-6 h-6" />
