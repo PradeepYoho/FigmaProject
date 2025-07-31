@@ -21,10 +21,7 @@ const Navbar: React.FC = () => {
   return (
     <div>
       <div
-        className="px-3 sm:px-4 md:px-5 flex flex-wrap md:flex-nowrap items-center justify-between md:justify-center h-[80px] w-full rounded-full"
-        style={{
-          backgroundColor: "#C8F6FF80",
-        }}
+      className="px-3 sm:px-4 md:px-5 flex flex-wrap md:flex-nowrap items-center justify-between md:justify-center h-[80px] w-full rounded-full bg-cyan-100/50"
       >
         <Link to="/" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center mb-2 md:mb-0">
           <img src={logo} alt="Logo" className="w-full h-full object-cover" />

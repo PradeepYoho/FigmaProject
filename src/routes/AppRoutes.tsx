@@ -8,10 +8,8 @@ import Calendar from '../NavBarLinks/Calendar';
 import Users from '../NavBarLinks/Users';
 import Institute from '../NavBarLinks/Institute';
 import Settings from '../NavBarLinks/Settings';
-import Notification from '../NavBarLinks/Notification';
+import Notification from '../NavBarLinks/NotificationTable';
 import PaymentTable from '../NavBarLinks/Payment';
-import Edit from '../components/Edit';
-import InstituteDetails from '../components/InstituteDetails';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -27,9 +25,8 @@ const AppRoutes: React.FC = () => {
           <Route path="/clock" element={<Clock/>} />
           <Route path="/institute" element={<Institute/>} />
           <Route path="/settings" element={<Settings/>} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/personal-info" element={<InstituteDetails />} />
           <Route path="/notifications" element={<Notification/>} />
+         
 
         </Route>
       </Routes>

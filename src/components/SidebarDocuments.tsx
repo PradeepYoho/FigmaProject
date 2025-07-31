@@ -8,7 +8,7 @@ function SidebarDocuments() {
     ];
 
     return (
-        <div className="flex flex-wrap gap-4 justify-center  p-4 rounded-xl">
+        <div className="flex flex-wrap gap-4 justify-center p-2 rounded-xl">
             {documents.map((doc, index) => (
                 <div
                     key={index}
