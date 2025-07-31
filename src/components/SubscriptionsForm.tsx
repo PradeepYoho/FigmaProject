@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SubscriptionForm: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 text-[#072C56]">
+    <div className=" flex items-center justify-center p-4 text-[#072C56]">
       <div className="w-full p-8 relative text-[#072C56]">
         <div className="flex justify-between items-start mb-6">
           <h2 className="text-xl font-semibold">Subscriptions Plan</h2>
@@ -82,12 +83,19 @@ const SubscriptionForm: React.FC = () => {
         </div>
 
         <div className="flex justify-between mt-6">
-          <button className="bg-[#072C56] hover:bg-[#0e3a6d] text-white px-6 py-2 rounded-lg">
-            Cancel
-          </button>
-          <button className="bg-[#072C56] hover:bg-[#0e3a6d] text-white px-6 py-2 rounded-lg">
-            Submit
-          </button>
+           <Link
+        to="/" 
+        className="bg-[#072C56] hover:bg-[#0e3a6d] text-white px-6 py-2 rounded-lg text-center"
+      >
+        Cancel
+      </Link>
+
+      <Link
+        to="/" 
+        className="bg-[#072C56] hover:bg-[#0e3a6d] text-white px-6 py-2 rounded-lg text-center"
+      >
+        Submit
+      </Link>
         </div>
       </div>
     </div>

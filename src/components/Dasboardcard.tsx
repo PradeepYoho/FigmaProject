@@ -12,12 +12,12 @@ interface DashboardCardProps {
 const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, icon, imageUrl }) => {
   return (
     <div
-      className="relative bg-cover bg-center rounded-2xl overflow-hidden w-full min-h-[140px] flex"
+      className="relative bg-cover bg-center rounded-2xl overflow-hidden min-h-[140px] flex"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <div className="absolute "></div> 
 
-      <div className="relative z-10 p-4 sm:p-4 text-[#0E2B56] w-full flex flex-col justify-between">
+      <div className="relative z-10 p-4  text-[#0E2B56]  flex flex-col justify-between">
         <div className="flex items-center gap-2">
           <img src={icon} alt="Icon" className="w-8 h-8" />
           <h3 className="text-xl font-semibold">{title}</h3>
@@ -30,7 +30,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, icon, image
 
 const Dashboardcard: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 mt-10 w-full">
+    <div className="grid grid-cols-4 gap-6 mb-6 mt-10 ">
       <Link to="/institutes">
   <DashboardCard
     title="Total Institute"

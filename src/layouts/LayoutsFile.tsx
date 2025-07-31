@@ -16,8 +16,17 @@ const LayoutsFile: React.FC = () => {
           className="bg-cover bg-fixed bg-center rounded-lg border border-gray-300 p-4"
           style={{ backgroundImage: `url(${blurbg})` }}
         >
-         <div className=''><Navbar />
-         </div>
+         
+          <div
+  className={`fixed left-0 right-0 z-50 px-4 sm:px-6 md:px-10 xl:px-20 transition-colors duration-300 ${
+    scrolled ? 'bg-[#0e2b56]/90 shadow-lg backdrop-blur-md' : ''
+  }`}
+>
+  <div className="max-w-[1600px] mx-auto">
+    <Navbar />
+  </div>
+</div>
+
           <div className="pt-20">
             <Outlet />
           </div>
