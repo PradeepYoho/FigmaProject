@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png';  
 import group1 from '../assets/group1.png';
@@ -13,16 +13,27 @@ import profile from '../assets/profile.png';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (path: string) => location.pathname === path;
-
   const activeClass = "bg-white";
 
   return (
-    <div>
-      <div
-      className="px-3 sm:px-4 md:px-5 flex flex-wrap md:flex-nowrap items-center justify-between md:justify-center h-[80px] w-full rounded-full bg-cyan-100/50"
-      >
+    <div className="fixed pt-5 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+  <div
+    className={`w-full max-w-[calc(100%-32px*2)] px-4 flex items-center justify-between h-[80px] rounded-full transition-colors duration-300 pointer-events-auto ${
+      scrolled ? 'bg-white/20 shadow-md backdrop-blur-md' : 'bg-cyan-100/50'
+    }`}
+  >
         <Link to="/" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center mb-2 md:mb-0">
           <img src={logo} alt="Logo" className="w-full h-full object-cover" />
         </Link>
