@@ -1,10 +1,10 @@
-import MERN from "../assets/MERN.png"; // replace with your actual image path
+import MERN from "../assets/MERN.png"; 
 const Courses = () => {
 return (
     <div className="max-w-sm bg-gradient-to-br from-blue-100 to-blue-300 rounded-2xl p-4 shadow-lg space-y-4">
       <div className="rounded-xl overflow-hidden">
         <img
-          src={MERN} // replace with your actual image path
+          src={MERN} 
           alt="MERN"
           className="w-full h-40 object-cover"
         />

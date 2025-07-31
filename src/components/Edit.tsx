@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Edit: React.FC = () => {
   return (
@@ -86,6 +87,16 @@ const Edit: React.FC = () => {
             <input type="url" className="input bg-transparent" />
           </div>
         </form>
+                      <div className="flex justify-between mt-6">
+        <Link
+          to="/profile" className="bg-white px-6 py-2 rounded-lg font-semibold text-blue-900">
+          Submit
+        </Link>
+        <Link to="/profile" className="bg-blue-900 px-6 py-2 rounded-lg font-semibold text-white">
+          Cancel
+        </Link>
+      </div>
+
       </div>
     </div>
   );
