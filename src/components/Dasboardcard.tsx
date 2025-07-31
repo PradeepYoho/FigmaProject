@@ -1,6 +1,7 @@
 import React from 'react';
 import cardIcon from '../assets/cardIcon.png';
 import rectangleImage from '../assets/rectangleimage.png';
+import { Link } from 'react-router-dom';
 interface DashboardCardProps {
   title: string;
   value: string | number;
@@ -30,30 +31,41 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, icon, image
 const Dashboardcard: React.FC = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 mt-10 w-full">
-      <DashboardCard
-        title="Total Institute"
-        value={0}
-        icon={cardIcon}
-        imageUrl={rectangleImage}
-      />
-      <DashboardCard
-        title="Institute Subscriptions"
-        value={0}
-        icon={cardIcon}
-        imageUrl={rectangleImage}
-      />
-      <DashboardCard
-        title="Active Subscriptions"
-        value={0}
-        icon={cardIcon}
-        imageUrl={rectangleImage}
-      />
-      <DashboardCard
-        title="New Support Tickets"
-        value={0}
-        icon={cardIcon}
-        imageUrl={rectangleImage}
-      />
+      <Link to="/institutes">
+  <DashboardCard
+    title="Total Institute"
+    value={0}
+    icon={cardIcon}
+    imageUrl={rectangleImage}
+  />
+</Link>
+
+<Link to="/institue-subscriptions">
+  <DashboardCard
+    title="Institute Subscriptions"
+    value={0}
+    icon={cardIcon}
+    imageUrl={rectangleImage}
+  />
+</Link>
+
+<Link to="/subscriptions">
+  <DashboardCard
+    title="Active Subscriptions"
+    value={0}
+    icon={cardIcon}
+    imageUrl={rectangleImage}
+  />
+</Link>
+
+<Link to="/support-tickets">
+  <DashboardCard
+    title="New Support Tickets"
+    value={0}
+    icon={cardIcon}
+    imageUrl={rectangleImage}
+  />
+</Link>
     </div>
   );
 };
