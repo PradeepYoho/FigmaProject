@@ -23,25 +23,15 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const isActive = (path: string) => location.pathname === path;
   const activeClass = "bg-white";
 
   return (
-    <div className="fixed pt-5 top-5 left-0 right-0 z-50 flex justify-center pointer-events-none">
+    <div className="fixed pt-5 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
   <div
     className={`w-full max-w-[calc(100%-32px*2)] px-4 flex items-center justify-between h-[80px] rounded-full transition-colors duration-300 pointer-events-auto ${
-      scrolled ? 'bg-white shadow-md backdrop-blur-md' : 'bg-cyan-100/50'
+      scrolled ? 'bg-white/20 shadow-md backdrop-blur-md' : 'bg-cyan-100/50'
     }`}
   >
         <Link to="/" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center mb-2 md:mb-0">
