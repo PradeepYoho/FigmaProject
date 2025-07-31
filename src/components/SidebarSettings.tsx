@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import InstituteDetails from '../components/InstituteDetails';
-import Profile from './Profile';
+import SidebarProfile from '../components/SidebarProfile';
+import SocialMedia from '../components/SocialMedia';
+import SidebarDocuments from '../components/SidebarDocuments';
+import ChangePassword from '../components/ChangePassword';
+import ActivityLogs from '../components/ActivityLogs';
 
 type TabKey =
   | 'personal'
@@ -44,14 +48,13 @@ const SidebarSetting = () => {
         </ul>
       </div>
 
-      {/* Content Area */}
       <div className="flex-1 bg-white/20 rounded-2xl p-6 shadow-lg">
         {activeTab === 'personal' && <InstituteDetails />}
-        {activeTab === 'profile' && <Profile />}
-        {/* {activeTab === 'social' && <SocialMedia />} */}
-        {/* {activeTab === 'documents' && <Documents />} */}
-        {/* {activeTab === 'password' && <ChangePassword />} */}
-        {/* {activeTab === 'logs' && <ActivityLogs />} */}
+        {activeTab === 'profile' && <SidebarProfile />}
+        {activeTab === 'social' && <SocialMedia />}
+        {activeTab === 'documents' && <SidebarDocuments />}
+        {activeTab === 'password' && <ChangePassword />}
+        {activeTab === 'logs' && <ActivityLogs />}
       </div>
     </div>
   );

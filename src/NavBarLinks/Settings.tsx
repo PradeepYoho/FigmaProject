@@ -5,9 +5,10 @@ import Bannar from "../components/Banner";
 const Settings: React.FC = () => {
   return (
     <>
-    <Bannar />
+    <div className="pt-10">
+          <Bannar />
         <SidebarSetting />
-        </>
+      </div></>
   );
 };
 

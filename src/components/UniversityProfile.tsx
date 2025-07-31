@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import barathiLogo from "../assets/barathiLogo.png";
 import barathidasanBanner from "../assets/barathidasanBanner.png";
+import About from "../components/About";
 import Profile from "../components/Profile";
 
 type Tab = 'about' | 'profile' | 'courses';
@@ -49,7 +50,7 @@ function UniversityProfile() {
         </div>
 
         <div>
-          {/* {activeTab === 'about' && <About />} */}
+          {activeTab === 'about' && <About />}
           {activeTab === 'profile' && <Profile />}
           {/* {activeTab === 'courses' && <Courses />} */}
         </div>
