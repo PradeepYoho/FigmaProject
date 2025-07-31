@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Dashboardcard from "./Dasboardcard";
 import filter from "../assets/filter.png";
-import path1 from "../assets/Path (1).png";
-import twelve from "../assets/12k.png";
+
+import RevenueChart from "./RevenueChart";
 
 const Dashboard: React.FC = () => {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
@@ -78,21 +78,7 @@ const Dashboard: React.FC = () => {
      <div className="flex flex-wrap justify-between">
  
   <div className="w-full md:w-[48%] bg-[rgba(200,246,255,0.5)] p-6 rounded-xl shadow-md">
-    <h3 className="text-lg font-semibold text-[#0E2B56] mb-4">
-      Revenue Trends (Monthly)
-    </h3>
-    <div className="relative w-full h-[260px]">
-      <img
-        src={path1}
-        alt="Graph"
-        className="w-full h-full object-contain"
-      />
-      <img
-        src={twelve}
-        alt="Tooltip"
-        className="absolute w-[70px] h-[65px] top-[-30px] left-[60%] transform -translate-x-1/2"
-      />
-    </div>
+   <RevenueChart/>
   </div>
 
 

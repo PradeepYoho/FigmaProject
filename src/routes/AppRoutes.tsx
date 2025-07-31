@@ -9,7 +9,7 @@ import Users from '../NavBarLinks/Users';
 import Institute from '../NavBarLinks/Institute';
 import Settings from '../NavBarLinks/Settings';
 import Notification from '../NavBarLinks/Notification';
-import Payment from '../NavBarLinks/Payment';
+import PaymentTable from '../NavBarLinks/Payment';
 import Edit from '../components/Edit';
 import InstituteDetails from '../components/InstituteDetails';
 
@@ -22,7 +22,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/home" element={<Home />} />
            <Route path="/profile" element={<UniversityProfile />} />
            <Route path="/calendar" element={<Calendar/>} />
-          <Route path="/payment" element={<Payment/>} />
+          <Route path="/payment" element={<PaymentTable/>} />
           <Route path="/users" element={<Users/>} /> 
           <Route path="/clock" element={<Clock/>} />
           <Route path="/institute" element={<Institute/>} />
