@@ -4,6 +4,7 @@ import barathiLogo from "../assets/barathiLogo.png";
 import barathidasanBanner from "../assets/barathidasanBanner.png";
 import About from "../components/About";
 import SidebarSettings from "../components/SidebarSettings";
+import Courses from "../components/Courses";
 
 type Tab = 'about' | 'profile' | 'courses';
 
@@ -52,7 +53,7 @@ function UniversityProfile() {
         <div>
           {activeTab === 'about' && <About />}
           {activeTab === 'profile' && <SidebarSettings />}
-          {/* {activeTab === 'courses' && <Courses />} */}
+          {activeTab === 'courses' && <Courses />}
         </div>
       </div>
     </div>

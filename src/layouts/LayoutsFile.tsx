@@ -33,7 +33,7 @@ const LayoutsFile: React.FC = () => {
     scrolled ? 'bg-[#0e2b56]/90 shadow-lg backdrop-blur-md' : ''
   }`}
 >
-  <div className="max-w-[1600px] mx-auto">
+  <div>
     <Navbar />
   </div>
 </div>
