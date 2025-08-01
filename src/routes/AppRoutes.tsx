@@ -11,6 +11,8 @@ import Settings from '../NavBarLinks/Settings';
 import Notification from '../NavBarLinks/NotificationTable';
 import PaymentTable from '../NavBarLinks/Payment';
 import Edit from '../components/Edit';
+import HelpCenterQuestions from '../components/HelpCenterNotes';
+import TicketsChat from '../components/TicketsChat';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -19,17 +21,17 @@ const AppRoutes: React.FC = () => {
         <Route element={<LayoutsFile />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-           <Route path="/profile" element={<UniversityProfile />} />
-           <Route path="/calendar" element={<Calendar/>} />
-          <Route path="/payment" element={<PaymentTable/>} />
-          <Route path="/users" element={<Users/>} /> 
-          <Route path="/clock" element={<Clock/>} />
-          <Route path="/institute" element={<Institute/>} />
+          <Route path="/profile" element={<UniversityProfile />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/payment" element={<PaymentTable />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/questions" element={<HelpCenterQuestions />} />
+          <Route path="/clock" element={<Clock />} />
+          <Route path="/institute" element={<Institute />} />
           <Route path="/edit" element={<Edit />} />
-          <Route path="/settings" element={<Settings/>} />
-          <Route path="/notifications" element={<Notification/>} />
-         
-
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/notifications" element={<Notification />} />
+          <Route path="/tickets-chatbox" element={<TicketsChat />} />
         </Route>
       </Routes>
     </Router>
