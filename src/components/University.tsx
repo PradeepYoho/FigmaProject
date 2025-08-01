@@ -37,21 +37,22 @@ const   University: React.FC = () => (
     {universities.map((uni, idx) => (
       <div
         key={idx}
-        className="bg-white/70 rounded-xl shadow-md flex flex-col items-center p-4"
-      >
+        className="bg-white/70 rounded-xl shadow-md p-4 flex items-start"
+      >        
         <img
           src={uni.image}
           alt={uni.name}
-          className="w-24 h-24 object-cover rounded-lg mb-4"
+          className="w-24 h-24 object-cover rounded-lg mb-8"
         />
-        <div className="w-full text-center">
+        <div className="flex flex-col flex-grow ml-6">
           <h3 className="font-semibold text-lg truncate">{uni.name}</h3>
-          <p className="text-gray-600 text-sm "> 
-            <img src="/src/assets/location.png" alt="/location" />
+          <p className="text-gray-600 text-sm flex items-center justify-center"> 
+            <img src="/src/assets/location.png" alt="/location" 
+            className="w-4 h-4 mr-2" />
             {uni.address}</p>
           <p className="text-gray-500 text-xs mt-1">{uni.plan}</p>
-          <div className="text-right">
-          <button className="mt-3 bg-green-600 text-white  px-6 py-1 rounded-md hover:bg-green-700 transition">
+          <div className="text-right w-full">
+          <button className="bg-green-600 text-white  px-5 py-1 rounded-md hover:bg-green-700 transition">
             View
           </button>
           </div>

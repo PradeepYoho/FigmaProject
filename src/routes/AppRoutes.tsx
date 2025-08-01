@@ -10,6 +10,7 @@ import Settings from '../NavBarLinks/Settings';
 import Notification from '../NavBarLinks/NotificationTable';
 import PaymentTable from '../NavBarLinks/Payment';
 import Institute from '../components/Institute';
+import PersonalInfoForm from '../components/PersonalInfoForm';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/settings" element={<Settings/>} />
           <Route path="/notifications" element={<Notification/>} />
           <Route path="/institute" element={<Institute/>} />
+          <Route path="/PersonalInfoform" element={<PersonalInfoForm/>} />
 
         </Route>
       </Routes>
