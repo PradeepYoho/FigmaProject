@@ -17,7 +17,8 @@ const LayoutsFile: React.FC = () => {
           style={{ backgroundImage: `url(${blurbg})` }}
         >
          <Navbar />
-          <div className="pt-10">
+         
+          <div className="min-h-screen pt-20">
             <Outlet />
           </div>
         </div>

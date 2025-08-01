@@ -8,7 +8,7 @@ const ProfileACC: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'account' | 'security'>('account');
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 p-4">
      
       <div className="w-60 rounded-lg bg-white/20 backdrop-blur-md p-4 shadow-lg flex flex-col gap-2">
         <button

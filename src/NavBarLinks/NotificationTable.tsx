@@ -19,7 +19,7 @@ const NotificationTable: React.FC = () => {
   };
 
   return (
-    <div className="w-full mt-10 relative p-4">
+    <div className="w-full  relative p-4 ">
       <NotificationSummary />
 
       <div className="flex justify-between items-center mb-4 mt-10">

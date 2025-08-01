@@ -38,7 +38,12 @@ useEffect(() => {
   return () => document.removeEventListener("mousedown", handleClickOutside);
 }, []);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+  if (path === "/home") {
+    return location.pathname === "/" || location.pathname === "/home";
+  }
+  return location.pathname === path;
+};
   const activeClass = "bg-white w-12 h-12 rounded-[10px] ";
 
   return (
@@ -49,13 +54,13 @@ useEffect(() => {
       scrolled ? 'bg-white/20 shadow-md backdrop-blur-md' : 'bg-cyan-100/50'
     }`}
   >
-        <Link to="/" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center mb-2 md:mb-0">
+        <Link to="/" className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center mb-2 md:mb-0 ${isActive("/home") ? activeClass : ""}`}>
           <img src={logo} alt="Logo" className="w-full h-full object-cover" />
         </Link>
 
         <div className="hidden md:flex items-center justify-center space-x-18 flex-1">
           <Link to="/home" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/home") ? activeClass : ""}`}>
-            <img src={group1} alt="Home" className="w-7 h-7 object-cover" />
+            <img src={group1} alt="Home" className="w-6 h-6 object-cover" />
           </Link>
           <Link to="/institute" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/institute") ? activeClass : ""}`}>
           <FaUsers className="w-9 h-9 text-[#4F77B2]" />
@@ -68,7 +73,7 @@ useEffect(() => {
          <FaClock className="w-6 h-6 text-[#4F77B2]" />
           </Link>
           <Link to="/payment" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/payment") ? activeClass : ""}`}>
-        <IoIosCard  className="w-6 h-6 text-[#4F77B2]" />
+        <IoIosCard  className="w-7 h-7 text-[#4F77B2]" />
           </Link>
           <Link to="/users" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/users") ? activeClass : ""}`}>
            <FaUser  className="w-6 h-6 text-[#4F77B2]" />
