@@ -16,9 +16,8 @@ const LayoutsFile: React.FC = () => {
           className="bg-cover bg-fixed bg-center rounded-lg border border-gray-300 p-4"
           style={{ backgroundImage: `url(${blurbg})` }}
         >
-         
-          <Navbar />
-          <div className="pt-20">
+         <Navbar />
+          <div className="pt-10">
             <Outlet />
           </div>
         </div>

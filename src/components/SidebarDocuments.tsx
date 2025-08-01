@@ -8,11 +8,11 @@ function SidebarDocuments() {
     ];
 
     return (
-        <div className="flex flex-wrap gap-4 justify-center p-2 rounded-xl">
+        <div className="flex gap-4 p-2 rounded-xl">
             {documents.map((doc, index) => (
                 <div
                     key={index}
-                    className="bg-white/50 backdrop-blur-md p-4 rounded-lg w-64 shadow-md flex flex-col justify-between bg-gradient-to-r from-blue-100 to-blue-200"
+                    className="bg-white/50 backdrop-blur-md p-4 rounded-lg w-64 shadow-md flex flex-col justify-between"
                 >
                     <div className="flex justify-between text-sm font-semibold text-[#0E2B56] mb-3 ">
                         <span>{doc.title}</span>

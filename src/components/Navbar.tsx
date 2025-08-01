@@ -28,9 +28,10 @@ const Navbar: React.FC = () => {
   const activeClass = "bg-white";
 
   return (
-    <div className="fixed pt-5 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+    <div className="fixed pt-5 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-8">
+ 
   <div
-    className={`w-full max-w-[calc(100%-32px*2)] px-4 flex items-center justify-between h-[80px] rounded-full transition-colors duration-300 pointer-events-auto ${
+    className={`w-full p-4 flex items-center justify-between h-[80px] rounded-full transition-colors duration-300 pointer-events-auto ${
       scrolled ? 'bg-white/20 shadow-md backdrop-blur-md' : 'bg-cyan-100/50'
     }`}
   >
