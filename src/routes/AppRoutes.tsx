@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LayoutsFile from '../layouts/LayoutsFile';
-import UniversityProfile from '../components/UniversityProfile';
 import Home from '../pages/Home';
 import Clock from '../NavBarLinks/Clock';
 import Calendar from '../NavBarLinks/Calendar';
 import Users from '../NavBarLinks/Users';
 import Institute from '../NavBarLinks/Institute';
 import Settings from '../NavBarLinks/Settings';
-
-
 import PaymentTable from '../NavBarLinks/Payment';
 import SubscriptionPlans from '../components/Subscription';
 import SubscriptionForm from '../components/SubscriptionsForm';
 import NotificationTable from '../NavBarLinks/NotificationTable';
+import ProfileACC from '../NavBarLinks/ProfileACC';
+import EditUserForm from '../components/EditUserForm';
+
 
 const AppRoutes: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const AppRoutes: React.FC = () => {
         <Route element={<LayoutsFile />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-           <Route path="/profile" element={<UniversityProfile />} />
+           <Route path="/profile" element={<ProfileACC />} />
            <Route path="/calendar" element={<Calendar/>} />
           <Route path="/payment" element={<PaymentTable/>} />
           <Route path="/users" element={<Users/>} /> 
@@ -32,6 +32,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/notifications" element={<NotificationTable/>} />
           <Route path ="/subscriptions" element ={<SubscriptionPlans/>} />
           <Route path ="/add-institute" element ={<SubscriptionForm/>} />
+          <Route path="/edituserform" element={<EditUserForm />} />
          
 
         </Route>
