@@ -14,6 +14,7 @@ import NotificationTable from '../NavBarLinks/NotificationTable';
 import VisitorsDetails from '../components/VisitorsDetails';
 import FAQManagement from '../components/FAQManagement';
 import AddFaqNotes from '../components/AddFaqNotes';
+import EditFaqNotes from '../components/EditFaqNotes';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/add-institute" element={<SubscriptionForm />} />
           <Route path="/visitors-details" element={<VisitorsDetails />} />
           <Route path="/add-faq-category" element={<AddFaqNotes />} />
+          <Route path="/edit-faq-category" element={<EditFaqNotes />} />
         </Route>
       </Routes>
     </Router>

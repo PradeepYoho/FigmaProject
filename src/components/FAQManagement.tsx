@@ -51,14 +51,13 @@ const FAQManagement = () => {
                     </div>
 
                     <div className="flex justify-end gap-6">
-                        <button className="text-blue-700 hover:text-blue-900">
+                        <Link to="/edit-faq-category" className="text-blue-700 hover:text-blue-900">
                             <FaEdit />
-                        </button>
-                        <button className="text-orange-600 hover:text-orange-800">
+                        </Link>
+                        <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
                             <FaTrash />
-                        </button>
-                    </div>
-                </div>
+                        </Link>
+                    </div>                </div>
             ))}
         </div>
     );
