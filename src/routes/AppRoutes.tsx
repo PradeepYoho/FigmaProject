@@ -6,17 +6,17 @@ import Home from '../pages/Home';
 import Clock from '../NavBarLinks/Clock';
 import Calendar from '../NavBarLinks/Calendar';
 import Users from '../NavBarLinks/Users';
-import Institute from '../NavBarLinks/Institute';
 import Settings from '../NavBarLinks/Settings';
 
 
-import PaymentTable from '../NavBarLinks/Payment';
 import SubscriptionPlans from '../components/Subscription';
 import SubscriptionForm from '../components/SubscriptionsForm';
 import NotificationTable from '../NavBarLinks/NotificationTable';
 import Notification from '../NavBarLinks/NotificationTable';
 // import Payment from '../NavBarLinks/Payment';
 import Edit from '../components/Edit';
+import PaymentTable from '../NavBarLinks/Payment';
+import Institute from '../components/Institute';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -39,6 +39,8 @@ const AppRoutes: React.FC = () => {
           <Route path="/edit" element={<Edit />} />
                     <Route path="/notifications" element={<Notification/>} />
          
+          <Route path="/notifications" element={<Notification/>} />
+          <Route path="/institute" element={<Institute/>} />
 
         </Route>
       </Routes>
