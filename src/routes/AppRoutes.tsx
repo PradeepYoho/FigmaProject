@@ -15,7 +15,7 @@ import SubscriptionPlans from '../components/Subscription';
 import SubscriptionForm from '../components/SubscriptionsForm';
 import NotificationTable from '../NavBarLinks/NotificationTable';
 import Notification from '../NavBarLinks/NotificationTable';
-import Payment from '../NavBarLinks/Payment';
+// import Payment from '../NavBarLinks/Payment';
 import Edit from '../components/Edit';
 
 const AppRoutes: React.FC = () => {
