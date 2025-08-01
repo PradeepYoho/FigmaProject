@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LayoutsFile from '../layouts/LayoutsFile';
-import UniversityProfile from '../components/UniversityProfile';
 import Home from '../pages/Home';
 import Clock from '../NavBarLinks/Clock';
 import Calendar from '../NavBarLinks/Calendar';
 import Users from '../NavBarLinks/Users';
 import Institute from '../NavBarLinks/Institute';
 import Settings from '../NavBarLinks/Settings';
-import Notification from '../NavBarLinks/NotificationTable';
+import UniversityProfile from '../components/UniversityProfile';
 import PaymentTable from '../NavBarLinks/Payment';
-import Edit from '../components/Edit';
-import HelpCenterQuestions from '../components/HelpCenterNotes';
-import TicketsChat from '../components/TicketsChat';
+import SubscriptionPlans from '../components/Subscription';
+import SubscriptionForm from '../components/SubscriptionsForm';
+import NotificationTable from '../NavBarLinks/NotificationTable';
+import VisitorsDetails from '../components/VisitorsDetails';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -21,17 +21,18 @@ const AppRoutes: React.FC = () => {
         <Route element={<LayoutsFile />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<UniversityProfile />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/payment" element={<PaymentTable />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/questions" element={<HelpCenterQuestions />} />
-          <Route path="/clock" element={<Clock />} />
-          <Route path="/institute" element={<Institute />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/notifications" element={<Notification />} />
-          <Route path="/tickets-chatbox" element={<TicketsChat />} />
+           <Route path="/profile" element={<UniversityProfile />} />
+           <Route path="/calendar" element={<Calendar/>} />
+          <Route path="/payment" element={<PaymentTable/>} />
+          <Route path="/users" element={<Users/>} /> 
+          <Route path="/clock" element={<Clock/>} />
+          <Route path="/institute" element={<Institute/>} />
+          <Route path="/settings" element={<Settings/>} />
+          <Route path="/notifications" element={<NotificationTable/>} />
+          <Route path ="/subscriptions" element ={<SubscriptionPlans/>} />
+          <Route path ="/add-institute" element ={<SubscriptionForm/>} />
+         <Route path="/visitors-details" element={<VisitorsDetails />} />
+
         </Route>
       </Routes>
     </Router>

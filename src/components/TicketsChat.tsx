@@ -13,7 +13,7 @@ const TicketsChat = () => {
                         <p className="text-xs text-gray-500">Institute Admin</p>
                     </div>
                 </div>
-                <Link to="/users">
+                <Link to="/visitors-details">
                     <FaEllipsisV className="text-gray-600 cursor-pointer" />
                 </Link>
                 </div>
