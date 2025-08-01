@@ -18,7 +18,7 @@ const LayoutsFile: React.FC = () => {
         >
          <Navbar />
          
-          <div className="pt-10">
+          <div className="pt-20">
             <Outlet />
           </div>
         </div>

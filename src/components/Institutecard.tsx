@@ -1,15 +1,16 @@
 import React from 'react';
 import cardIcon from '../assets/cardIcon.png';
 import rectangleImage from '../assets/rectangleimage.png';
-import University from './University';
-interface DashboardCardProps {
+
+
+interface InstitutecardProps {
   title: string;
   value: string | number;
   icon: string;
   imageUrl: string;
 }
 
-const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, icon, imageUrl }) => {
+const InstitutecardInner: React.FC<InstitutecardProps> = ({ title, value, icon, imageUrl }) => {
   return (
     <div
       className="relative bg-cover bg-center rounded-2xl overflow-hidden w-full min-h-[140px] flex"
@@ -28,33 +29,31 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, icon, image
   );
 };
 
-const Dashboardcard: React.FC = () => {
-  return  (<div>
+const Institutecard: React.FC = () => {
+  return  (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 mt-10 w-full">
-      <DashboardCard
+      <InstitutecardInner        
         title="Total Institute"
         value={0}
         icon={cardIcon}
         imageUrl={rectangleImage}
       />
-      <DashboardCard
+      <InstitutecardInner
         title="Active Institute"
         value={0}
         icon={cardIcon}
         imageUrl={rectangleImage}
       />
-      <DashboardCard
+      <InstitutecardInner
         title="Blocked Institute"
         value={0}
         icon={cardIcon}
         imageUrl={rectangleImage}
-      />
-      
-    </div>
-    <University/>
-    </div>
+      />   
+      </div>
+
     
   );
 };
 
-export default Dashboardcard;
+export default Institutecard;
