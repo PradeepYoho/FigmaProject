@@ -8,14 +8,14 @@ const SecurityTab: React.FC = () => {
   return (
     <div className="rounded-xl bg-white/20 backdrop-blur-md p-6 shadow-md space-y-6 mb-50">
       
-      <h2 className="text-xl font-semibold text-black">Change Password</h2>
+      <h2 className="text-xl font-semibold text-[#0E2B56]">Change Password</h2>
 
       
       <div className="bg-white/40 p-4 rounded-md shadow">
-        <p className="text-sm font-semibold text-gray-700">
+        <p className="text-lg font-semibold text-gray-700">
           Ensure That These Requirements Are Met
         </p>
-        <p className="text-xs text-gray-500 mt-1">
+        <p className="text-sm text-gray-500 mt-1">
           Minimum 8 Characters Long, Uppercase & Symbol
         </p>
       </div>
@@ -24,7 +24,7 @@ const SecurityTab: React.FC = () => {
           <input
             type={showNew ? 'text' : 'password'}
             placeholder="New Password"
-            className="w-full p-3 pr-10 text-sm rounded-md bg-white/40 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 pr-10 text-lg rounded-md bg-white/40 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             type="button"
@@ -39,7 +39,7 @@ const SecurityTab: React.FC = () => {
           <input
             type={showConfirm ? 'text' : 'password'}
             placeholder="Confirm New Password"
-            className="w-full p-3 pr-10 text-sm rounded-md bg-white/40 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 pr-10 text-lg rounded-md bg-white/40 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             type="button"

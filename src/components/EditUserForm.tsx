@@ -25,7 +25,7 @@ const EditUserForm: React.FC = () => {
       </button>
 
       
-      <h2 className="text-lg font-semibold text-[#0E2B56]">Edit User Information</h2>
+      <h2 className="text-xl font-semibold text-[#0E2B56]">Edit User Information</h2>
       <hr className="border-[#0E2B56]" />
 
      
@@ -42,14 +42,14 @@ const EditUserForm: React.FC = () => {
             className="hidden"
             onChange={handleImageChange}
           />
-          <span className="inline-block px-4 py-1 bg-blue-900 text-white text-sm rounded-md hover:bg-blue-800 transition">
+          <span className="inline-block px-4 py-1 bg-blue-900 text-white text-lg rounded-md hover:bg-blue-800 transition">
             Upload New Image
           </span>
         </label>
       </div>
 
      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
         <div>
           <label className="block mb-1 text-[#0E2B56]">First Name</label>
           <input type="text" className="w-full p-2 border border-[#0E2B56] rounded-md focus:outline-none" />
