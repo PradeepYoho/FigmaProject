@@ -12,7 +12,7 @@ interface SummaryCardProps {
 const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, icon, imageUrl }) => {
   return (
     <div
-      className="relative bg-cover bg-center rounded-2xl overflow-hidden w-full min-h-[140px] flex before:absolute before:inset-0 before:rounded-2xl"
+      className="relative bg-cover bg-center rounded-2xl  flex before:absolute before:inset-0 before:rounded-2xl"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <div className="relative z-10 p-4 w-full flex flex-col justify-between text-[#0E2B56]">
@@ -28,7 +28,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, icon, imageUrl 
 
 const NotificationSummary: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4 sm:px-6 md:px-10 mt-10">
+    <div className="grid grid-cols-3 gap-6  px-4 mt-10">
       <SummaryCard
         title="Total Notifications"
         value={0}
