@@ -1,8 +1,9 @@
 import React from 'react'
+import FAQManagement from '../components/FAQManagement'
 
 const Calendar:React.FC = () => {
   return (
-    <div>Calendar</div>
+    <FAQManagement />
   )
 }
 

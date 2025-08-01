@@ -32,8 +32,9 @@ const NotificationTable: React.FC = () => {
         </button>
       </div>
 
-   {isOverlayOpen && (
-<div className="absolute top-0 right-0 w-full sm:w-[380px] z-50">
+   
+     {isOverlayOpen && (
+<div className="absolute top-0 right-0 w-full sm:w-[380px] z-50 p-2">
     <div className="bg-white/10 backdrop-blur-xl rounded-xl shadow-lg border border-white/20 p-6 flex flex-col">
       
     
