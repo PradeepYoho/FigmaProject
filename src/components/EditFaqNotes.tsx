@@ -14,7 +14,7 @@ const EditFaqNotes = () => {
   return (
     <div className="relative">
       <div className="max-w-2xl bg-gradient-to-br from-blue-200 to-blue-400 mx-auto rounded-xl p-6 shadow-lg">
-        <h2 className="text-lg font-semibold text-blue-800 mb-8">Edit FAQ Categories</h2>
+        <h2 className="text-lg font-semibold text-blue-800 mb-8">Edit FAQ</h2>
 
         <form className="space-y-6">
           <div>
@@ -100,7 +100,7 @@ const EditFaqNotes = () => {
       </div>
       <h2 className="text-lg font-semibold mb-2 text-gray-800">Saved Successfully!</h2>
       <p className="text-sm text-gray-500 mb-6">
-        Your changes have been saved.
+        Status Changed
       </p>
       <Link
         to="/faq-list"

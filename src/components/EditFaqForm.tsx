@@ -34,7 +34,7 @@ const EditFaqForm = () => {
 
                 <div className="flex justify-between gap-2 pt-2">
                     <Link
-                        to="/settings"
+                        to="/support-tickets"
                         className="px-4 py-2 rounded-md border bg-white text-gray-700 hover:bg-gray-100 shadow-sm"
                     >
                         Cancel

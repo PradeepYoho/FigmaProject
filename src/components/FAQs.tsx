@@ -106,7 +106,7 @@ const FAQs = () => {
 
       {showForm && (
         <div className="fixed top-4 right-4 z-50">
-          <div className="bg-white/30 backdrop-blur-xl p-6 rounded-2xl w-96 shadow-xl border border-white/50">
+          <div className="bg-white/30 backdrop-blur-xl p-6 rounded-2xl w-96 h-150 shadow-xl border border-white/50">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-[#0E2B56]">Add FAQ</h2>
               <button
@@ -116,16 +116,19 @@ const FAQs = () => {
                 &times;
               </button>
             </div>
+                        <label htmlFor="title" className="text-lg font-medium text-blue-800 mb-2">Title</label>
             <input
               type="text"
               placeholder="Title"
               className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
             />
+                        <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Description</label>
             <input
               type="text"
               placeholder="Description"
               className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
             />
+                        <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Select Category</label>
             <select className="w-full px-4 py-2 mb-6 rounded-md border focus:outline-none text-gray-700">
               <option value="">Select Category</option>
               {categories.map((cat, i) => (
@@ -137,12 +140,12 @@ const FAQs = () => {
             <div className="flex justify-between">
               <button
                 onClick={() => setShowForm(false)}
-                className="px-4 py-2 bg-white border rounded-md text-[#0E2B56] font-medium hover:bg-gray-100"
+                        className="absolute bottom-5 right-5 bg-white text-gray-700 px-4 py-2 rounded-md shadow border hover:bg-blue-800 hover:text-white"
               >
                 Cancel
               </button>
               <button
-                className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b] font-medium"
+                        className="absolute bottom-5 left-5 bg-blue-800 text-white px-4 py-2 rounded-md shadow hover:bg-white hover:text-blue-800"
               >
                 Submit
               </button>
