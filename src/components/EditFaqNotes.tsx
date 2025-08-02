@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 const EditFaqNotes = () => {
   return (
-    <div className="max-w-2xl mx-auto rounded-xl p-6 shadow-lg">
+    <div className=" max-w-2xl bg-gradient-to-br from-blue-200 to-blue-400 mx-auto rounded-xl p-6 shadow-lg">
       <h2 className="text-lg font-semibold text-blue-800 mb-8">
         Edit FAQ Categories
       </h2>
@@ -31,20 +32,20 @@ const EditFaqNotes = () => {
           />
         </div>
 
-        <div className="flex justify-between mt-6">
-          <button
-            type="button"
-            className="bg-white border text-gray-700 px-4 py-2 rounded-md hover:bg-blue-800 hover:text-white transition"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-white hover:text-blue-900 border transition"
-          >
-            Save Changes
-          </button>
-        </div>
+                <div className="flex justify-between gap-2 pt-2">
+                    <Link
+                        to="/calendar"
+                        className="px-4 py-2 rounded-md border bg-white text-gray-700 hover:bg-gray-100 shadow-sm"
+                    >
+                        Cancel
+                    </Link>
+                    <Link
+                        to="/submit-faq"
+                        className="px-4 py-2 rounded-md bg-[#0E2B56] text-white hover:bg-[#133e7b] shadow-sm"
+                    >
+                        Save Changes
+                    </Link>
+                </div>
       </form>
     </div>
   );

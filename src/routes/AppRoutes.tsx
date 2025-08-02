@@ -15,6 +15,8 @@ import VisitorsDetails from '../components/VisitorsDetails';
 import FAQManagement from '../components/FAQManagement';
 import AddFaqNotes from '../components/AddFaqNotes';
 import EditFaqNotes from '../components/EditFaqNotes';
+import AddFaqForm from '../components/AddFaqForm';
+import EditFaqForm from '../components/EditFaqForm';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -36,6 +38,8 @@ const AppRoutes: React.FC = () => {
           <Route path="/visitors-details" element={<VisitorsDetails />} />
           <Route path="/add-faq-category" element={<AddFaqNotes />} />
           <Route path="/edit-faq-category" element={<EditFaqNotes />} />
+          <Route path="/add-faq-form" element={<AddFaqForm />} />
+          <Route path="/edit-faq-form" element={<EditFaqForm />} />
         </Route>
       </Routes>
     </Router>

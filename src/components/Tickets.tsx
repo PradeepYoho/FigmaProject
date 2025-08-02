@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TicketsChat from "./TicketsChat"; // adjust path as needed
+import TicketsChat from "./TicketsChat"; 
 
 const tickets = [
   {
@@ -38,7 +38,6 @@ const Tickets = () => {
 
   return (
     <div className="min-h-screen flex p-6 gap-6">
-      {/* Left - Ticket List */}
       <div className="w-1/2">
         <input
           type="text"
@@ -56,17 +55,17 @@ const Tickets = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-full bg-[#0E2B56]" />
                   <div>
-                    <p className="font-semibold">{ticket.name}</p>
-                    <p className="text-sm text-white/80">{ticket.title}</p>
+                    <p className="font-semibold text-blue-900">{ticket.name}</p>
+                    <p className="text-sm text-blue-700">{ticket.title}</p>
                   </div>
                 </div>
-                <p className="text-sm text-white/70">{ticket.time}</p>
+                <p className="text-sm text-white">{ticket.time}</p>
               </div>
 
               <div className="flex justify-end space-x-4 mt-4">
                 <button
                   onClick={() => setSelectedTicket(ticket)}
-                  className="px-4 py-1 rounded-md bg-[#0E2B56] text-white text-sm font-semibold"
+                  className="px-4 py-1 rounded-md bg-[#0E2B56] text-white text-sm font-semibold cursor-pointer"
                 >
                   {ticket.status}
                 </button>
@@ -88,12 +87,11 @@ const Tickets = () => {
         </div>
       </div>
 
-      {/* Right - Chat Window */}
       <div className="w-1/2">
         {selectedTicket ? (
           <TicketsChat />
         ) : (
-          <div className="text-white text-center mt-20 opacity-60">
+          <div className="text-white text-center  opacity-60">
           </div>
         )}
       </div>

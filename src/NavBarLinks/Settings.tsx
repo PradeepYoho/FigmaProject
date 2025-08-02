@@ -1,14 +1,13 @@
 import React from "react";
-import SidebarSetting from "../components/SidebarSettings"; 
-import Bannar from "../components/Banner";
+import FAQs from "../components/FAQs";
 
 const Settings: React.FC = () => {
   return (
     <>
-    <div className="pt-10">
-          <Bannar />
-        <SidebarSetting />
-      </div></>
+    <div>
+      <FAQs />
+    </div>
+    </>
   );
 };
 

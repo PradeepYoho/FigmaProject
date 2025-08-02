@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const TicketsChat = () => {
     return (
-        <div className="mx-auto mt-10 rounded-xl shadow-lg bg-gradient-to-br from-[#dce9f9] to-[#c5d7e7] p-4">
+        <div className="mx-auto rounded-xl shadow-lg bg-gradient-to-br from-blue-200 to-blue-400 p-4">
             <div className="flex justify-between items-center border-b pb-4">
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-400 rounded-full" />
