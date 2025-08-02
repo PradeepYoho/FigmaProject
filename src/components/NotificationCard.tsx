@@ -1,6 +1,7 @@
 import React from 'react';
 import cardIcon from '../assets/cardIcon.png';
 import rectangleImage from '../assets/rectangleimage.png';
+import { Link } from 'react-router-dom';
 
 interface SummaryCardProps {
   title: string;
@@ -29,12 +30,14 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, icon, imageUrl 
 const NotificationSummary: React.FC = () => {
   return (
     <div className="grid grid-cols-4 gap-5  mt-10">
+      <Link to="">
       <SummaryCard
+         
         title="Total Notifications"
         value={0}
         icon={cardIcon}
         imageUrl={rectangleImage}
-      />
+      /></Link> 
       <SummaryCard
         title="Seen Notifications"
         value={0}
