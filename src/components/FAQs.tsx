@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const FAQs = () => {
+  const [showForm, setShowForm] = useState(false);
+
   const faqs = [
     {
       question: "How do I set effective community guidelines?",
@@ -35,21 +38,30 @@ const FAQs = () => {
     },
   ];
 
+  const categories = [
+    "Community Management",
+    "Dashboard",
+    "User Management",
+    "Contant Management",
+    "Course Management",
+    "Student Management",
+  ];
+
   return (
-    <div className="space-y-3">
+    <div className="relative space-y-3">
       <div className="flex justify-between items-center mb-4">
         <input
           type="text"
           placeholder="Search"
           className="px-4 py-2 border border-blue-800 w-1/3 rounded-md focus:outline-none"
         />
-        <Link
-          to="/add-faq-form"
+        <button
+          onClick={() => setShowForm(true)}
           className="flex items-center gap-2 px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b] text-sm font-medium"
         >
           <FaPlus />
           Add FAQ
-        </Link>
+        </button>
       </div>
 
       <table className="w-full text-left bg-opacity-10 rounded-md overflow-hidden shadow">
@@ -65,30 +77,79 @@ const FAQs = () => {
           {faqs.map((faq, index) => (
             <tr
               key={index}
-              className="border-b border-white border-opacity-10 hover:bg-white hover:bg-opacity-20 transition space-y-2"
+              className="border-b border-white border-opacity-10 hover:bg-opacity-20 transition"
             >
               <td className="px-6 py-4 text-gray-800">{faq.question}</td>
               <td className="px-6 py-4 text-gray-800">{faq.category}</td>
               <td className="px-6 py-4">
-                <label className="inline-flex items-center cursor-pointer">
-                  <input type="checkbox" className="sr-only peer" defaultChecked={faq.status} />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#0E2B56] rounded-full peer peer-checked:bg-green-400 transition-all duration-300"></div>
-                </label>
+                        <label className="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" className="sr-only peer" defaultChecked />
+                            <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:bg-green-500 relative transition-all duration-300">
+                                <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-full" />
+                            </div>
+                        </label>
               </td>
               <td className="px-6 py-4">
-                <div className="flex gap-4">
-                  <Link to="/edit-faq-form" className="text-blue-700 hover:text-blue-900">
-                    <FaEdit />
-                  </Link>
-                  <Link to="/delete-faq-form" className="text-orange-600 hover:text-orange-800">
-                    <FaTrash />
-                  </Link>
-                </div>
+                    <div className="flex justify-end gap-6">
+                        <Link to="/edit-faq-category" className="text-blue-700 hover:text-blue-900">
+                            <FaEdit />
+                        </Link>
+                        <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
+                            <FaTrash />
+                        </Link>
+                    </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      {showForm && (
+        <div className="fixed top-4 right-4 z-50">
+          <div className="bg-white/30 backdrop-blur-xl p-6 rounded-2xl w-96 shadow-xl border border-white/50">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-[#0E2B56]">Add FAQ</h2>
+              <button
+                onClick={() => setShowForm(false)}
+                className="text-gray-700 text-xl hover:text-red-500"
+              >
+                &times;
+              </button>
+            </div>
+            <input
+              type="text"
+              placeholder="Title"
+              className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
+            />
+            <select className="w-full px-4 py-2 mb-6 rounded-md border focus:outline-none text-gray-700">
+              <option value="">Select Category</option>
+              {categories.map((cat, i) => (
+                <option key={i} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+            <div className="flex justify-between">
+              <button
+                onClick={() => setShowForm(false)}
+                className="px-4 py-2 bg-white border rounded-md text-[#0E2B56] font-medium hover:bg-gray-100"
+              >
+                Cancel
+              </button>
+              <button
+                className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b] font-medium"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -37,15 +37,15 @@ const HelpCenter = () => {
                 </div>
             </div>
 
-            <div className="text-center space-y-2 mb-12">
+            <div className="text-center space-y-5 mb-12">
                 <Link
                     to="/questions"
                     className="bg-white px-6 py-1 rounded-full text-[#0E2B56] font-medium shadow"
                 >
                     Questions
                 </Link>
-                <p className="text-sm font-semibold">You still have a questions?</p>
-                <p className="text-sm text-gray-700">
+                <p className="text-lg font-semibold pt-5">You still have a questions?</p>
+                <p className="text-md text-gray-700">
                     If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
                 </p>
             </div>

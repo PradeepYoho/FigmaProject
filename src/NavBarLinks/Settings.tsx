@@ -1,11 +1,11 @@
 import React from "react";
-import FAQs from "../components/FAQs";
+import UniversityProfile from "../components/UniversityProfile";
 
 const Settings: React.FC = () => {
   return (
     <>
     <div>
-      <FAQs />
+      <UniversityProfile />
     </div>
     </>
   );

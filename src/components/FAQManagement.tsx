@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -11,21 +12,23 @@ const faqCategories = [
 ];
 
 const FAQManagement = () => {
+    const [showModal, setShowModal] = useState(false);
+
     return (
-        <div className="space-y-3">
+        <div className="relative space-y-3">
             <div className="flex justify-between items-center mb-4">
                 <input
                     type="text"
                     placeholder="Search"
                     className="px-4 py-2 rounded-md border-2 border-blue-800 w-1/3"
                 />
-                <Link
-                    to="/add-faq-category"
+                <button
+                    onClick={() => setShowModal(true)}
                     className="flex items-center gap-2 px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b] text-sm font-medium"
                 >
                     <FaPlus />
                     Add FAQ Categories
-                </Link>
+                </button>
             </div>
 
             <div className="flex justify-between bg-[#0E2B56] text-white px-6 py-3 rounded-lg font-semibold text-md">
@@ -40,7 +43,6 @@ const FAQManagement = () => {
                     className="flex justify-between items-center bg-white/40 backdrop-blur-md px-6 py-3 border-b border-white/30 text-md text-[#0E2B56] rounded-xl"
                 >
                     <div>{name}</div>
-
                     <div>
                         <label className="inline-flex items-center cursor-pointer">
                             <input type="checkbox" className="sr-only peer" defaultChecked />
@@ -49,7 +51,6 @@ const FAQManagement = () => {
                             </div>
                         </label>
                     </div>
-
                     <div className="flex justify-end gap-6">
                         <Link to="/edit-faq-category" className="text-blue-700 hover:text-blue-900">
                             <FaEdit />
@@ -57,8 +58,51 @@ const FAQManagement = () => {
                         <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
                             <FaTrash />
                         </Link>
-                    </div>                </div>
+                    </div>
+                </div>
             ))}
+
+{showModal && (
+    <div className="fixed top-4 right-4 z-50">
+        <div className="bg-white/30 backdrop-blur-xl p-6 rounded-2xl w-96 h-150 shadow-xl border border-white/50">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-lg font-semibold text-[#0E2B56]">Add FAQ Categories</h2>
+                <button
+                    onClick={() => setShowModal(false)}
+                    className="text-gray-700 text-xl hover:text-red-500"
+                >
+                    &times;
+                </button>
+            </div>
+            <label htmlFor="title" className="text-lg font-medium text-blue-800 mb-2">Title</label>
+            <input
+                type="text"
+                placeholder="Title"
+                className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
+            />
+            <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Description</label>
+            <input
+                type="text"
+                placeholder="Description"
+                className="w-full px-4 py-2 mb-6 rounded-md border focus:outline-none"
+            />
+                <div className="flex justify-between mt-8">
+                    <Link
+                        to="/calendar"
+                        className="absolute bottom-5 right-5 bg-white text-gray-700 px-4 py-2 rounded-md shadow border hover:bg-blue-800 hover:text-white"
+                    >
+                        Cancel
+                    </Link>
+                    <Link
+                        to="/calendar"
+                        className="absolute bottom-5 left-5 bg-blue-800 text-white px-4 py-2 rounded-md shadow hover:bg-white hover:text-blue-800"
+                    >
+                        Submit
+                    </Link>
+                </div>
+            </div>
+        </div>
+    )}
         </div>
     );
 };

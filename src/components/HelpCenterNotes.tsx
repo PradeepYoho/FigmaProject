@@ -6,12 +6,12 @@ const HelpCenterQuestions = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white/10 backdrop-blur-md rounded-lg w-full max-w-xl p-6 shadow-xl relative border border-white/30 text-[#0E2B56]">
-<Link
-  to="/users"
-  className="absolute top-4 right-4 text-white hover:text-gray-300"
->
-  <FaTimes />
-</Link>
+        <Link
+          to="/users"
+          className="absolute top-4 right-4 text-white hover:text-gray-300"
+        >
+          <FaTimes />
+        </Link>
         <h2 className="text-lg font-semibold mb-6 text-white">
           Add Help Information
         </h2>
@@ -45,21 +45,21 @@ const HelpCenterQuestions = () => {
           </div>
         </div>
 
-<div className="flex justify-between items-center mt-6">
-  <Link
-    to="/users"
-    className="px-6 py-2 bg-white text-[#0E2B56] rounded-md shadow-md hover:bg-gray-100"
-  >
-    Cancel
-  </Link>
-  
-  <Link
-    to="/clock"
-    className="px-6 py-2 bg-[#0E2B56] text-white rounded-md shadow-md hover:bg-[#14366e]"
-  >
-    Submit
-  </Link>
-</div>
+        <div className="flex justify-between items-center mt-6">
+          <Link
+            to="/users"
+            className="px-6 py-2 bg-white text-[#0E2B56] rounded-md shadow-md hover:bg-gray-100"
+          >
+            Cancel
+          </Link>
+
+          <Link
+            to="/clock"
+            className="px-6 py-2 bg-[#0E2B56] text-white rounded-md shadow-md hover:bg-[#14366e]"
+          >
+            Submit
+          </Link>
+        </div>
       </div>
     </div>
   );
