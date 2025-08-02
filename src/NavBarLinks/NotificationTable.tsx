@@ -19,7 +19,7 @@ const NotificationTable: React.FC = () => {
   };
 
   return (
-    <div className="w-full mt-10 relative p-4">
+    <div className="w-full  relative p-4 ">
       <NotificationSummary />
 
       <div className="flex justify-between items-center mb-4 mt-10">
@@ -34,7 +34,7 @@ const NotificationTable: React.FC = () => {
 
    
      {isOverlayOpen && (
-<div className="absolute top-[-100px] right-0 w-full sm:w-[380px] z-50 p-4">
+<div className="absolute top-0 right-0 w-full sm:w-[380px] z-50 ">
     <div className="bg-white/10 backdrop-blur-xl rounded-xl shadow-lg border border-white/20 p-6 flex flex-col">
       
     
@@ -104,12 +104,7 @@ const NotificationTable: React.FC = () => {
       </div>
     </div>
   </div>
-)}
-
-
-
-
-    
+)}   
       <div className="grid grid-cols-5 bg-[#0E2B56] text-white font-semibold rounded-lg px-5 py-3 text-center items-center">
         <span className="text-center">Title</span>
 <span className="text-center">Body</span>
@@ -118,7 +113,6 @@ const NotificationTable: React.FC = () => {
 <span className="text-center">Actions</span>
       </div>
 
-  
       <div className="space-y-4 mt-4">
         {mockData.map((item, index) => (
           <div

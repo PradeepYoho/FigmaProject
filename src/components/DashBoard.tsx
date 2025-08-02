@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="p-2">
+    <div className="p-2 ">
     
       <div className="flex mb-3">
         <button

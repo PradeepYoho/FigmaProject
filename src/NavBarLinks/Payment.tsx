@@ -1,57 +1,66 @@
-import React from "react";
 import { Eye } from "lucide-react";
 
-type Fee = {
-  id: string;
-  institute: string;
-  plan: string;
-  issueDate: string;
-  amount: string;
-};
+const fees = [
+  {
+    id: "#1",
+    institute: "JD",
+    plan: "Basic Plan",
+    issueDate: "2-24-2025 / 4-27-2025",
+    amount: "₹0",
+  },
+  {
+    id: "#1",
+    institute: "JD",
+    plan: "Basic Plan",
+    issueDate: "2-24-2025 / 4-27-2025",
+    amount: "₹0",
+  },
+  {
+    id: "#1",
+    institute: "JD",
+    plan: "Basic Plan",
+    issueDate: "2-24-2025 / 4-27-2025",
+    amount: "₹0",
+  },
+  {
+    id: "#1",
+    institute: "JD",
+    plan: "Basic Plan",
+    issueDate: "2-24-2025 / 4-27-2025",
+    amount: "₹0",
+  },
+];
 
-const feeData: Fee[] = Array(6).fill({
-  id: "#1",
-  institute: "JD",
-  plan: "Basic Plan",
-  issueDate: "2-24-2025 / 4-27-2025",
-  amount: "0",
-});
-
-const PaymentTable: React.FC = () => {
+const FeesTable = () => {
   return (
-    <div className="pt-15 text-white font-sans">
-      <h2 className="text-lg font-semibold mb-6">Fees</h2>
+    <div className="p-6">
+      <h2 className="text-white text-lg font-semibold mb-4">Fees</h2>
 
-     
-      <div className="grid grid-cols-6 text-lg text-white/80 font-medium px-4 py-3 rounded-md bg-[#0E2B56] mb-4">
-        <div>ID</div>
-        <div>Institute Name</div>
-        <div>Current Plan</div>
-        <div>Issue Date</div>
-        <div>Amount Paid</div>
-        <div>Actions</div>
+    
+      <div className="bg-[#0E2B56] text-white rounded-md px-4 py-3 grid grid-cols-6 font-medium text-center items-center">
+        <span>ID</span>
+        <span>Institute Name</span>
+        <span>Current Plan</span>
+        <span>Issue Date</span>
+        <span>Amount Paid</span>
+        <span>Actions</span>
       </div>
 
-     
-      <div className="space-y-3">
-        {feeData.map((fee, index) => (
+   
+      <div className="mt-4 flex flex-col gap-5">
+        {fees.map((item, idx) => (
           <div
-            key={index}
-            className="grid grid-cols-6 items-center bg-white/10 backdrop-blur-lg rounded-xl px-4 py-3 text-lg border border-white/10 hover:bg-white/20 transition"
+            key={idx}
+            className="bg-white/10 backdrop-blur-md rounded-md px-4 py-3 grid grid-cols-6 text-[#0E2B56] text-center items-center"
           >
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-sm font-semibold">#{index}</span>
-              <span>{fee.id}</span>
-            </div>
-
-            <div className="flex items-center justify-center">{fee.institute}</div>
-            <div className="flex items-center justify-center">{fee.plan}</div>
-            <div className="flex items-center justify-center">{fee.issueDate}</div>
-            <div className="flex items-center justify-center">{fee.amount}</div>
-
-            <div className="flex items-center justify-center">
-              <Eye className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-            </div>
+            <span>{item.id}</span>
+            <span>{item.institute}</span>
+            <span >{item.plan}</span>
+            <span>{item.issueDate}</span>
+            <span>{item.amount}</span>
+            <span>
+              <Eye className="w-5 h-5 mx-auto cursor-pointer" />
+            </span>
           </div>
         ))}
       </div>
@@ -59,4 +68,4 @@ const PaymentTable: React.FC = () => {
   );
 };
 
-export default PaymentTable;
+export default FeesTable;
