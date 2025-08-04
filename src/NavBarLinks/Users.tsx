@@ -1,8 +1,11 @@
 import React from 'react'
+import HelpCenter from '../components/HelpCenter'
 
 const Users:React.FC = () => {
   return (
-    <div>Users</div>
+    <div className='pt-20'>
+      <HelpCenter />
+    </div>
   )
 }
 
