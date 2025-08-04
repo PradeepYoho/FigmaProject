@@ -99,7 +99,14 @@ useEffect(() => {
   <img src={profile} alt="Profile" className="w-full h-full object-cover rounded-full" />
 </button>
   {showProfileMenu && (
-    <div className="absolute right-0  w-32 bg-cyan-100/50 shadow-lg rounded-2xl p-4 flex flex-col space-y-2 z-50">
+    <div className="absolute right-0  w-34 bg-cyan-100/50 shadow-lg rounded-2xl p-4 flex flex-col space-y-2 z-50">
+       <Link
+        to="/TotalNotifications"
+        className="bg-[#002F67] text-white text-sm px-4 py-2 rounded-md text-center hover:opacity-90"
+      >
+        Notifications
+      </Link>
+      
       <Link
         to="/profile"
         className="bg-[#002F67] text-white text-sm px-4 py-2 rounded-md text-center hover:opacity-90"

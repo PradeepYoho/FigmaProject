@@ -16,7 +16,9 @@ import EditFaqNotes from '../components/EditFaqNotes';
 import EditFaqForm from '../components/EditFaqForm';
 import Calendar from '../NavBarLinks/Calendar';
 import ProfileACC from '../NavBarLinks/ProfileACC';
-import HelpCenterNotes from '../components/HelpCenterNotes';
+import EditUserForm from '../components/EditUserForm';
+import TotalNotifications from '../components/TotalNotifications';
+
 
 const AppRoutes: React.FC = () => {
   return (
@@ -26,20 +28,18 @@ const AppRoutes: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
            <Route path="/profile" element={<ProfileACC />} />
-           <Route path="/support-tickets" element={<FAQManagement />} />
-          <Route path="/payment" element={<PaymentTable />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/clock" element={<Clock />} />
-          <Route path="/institute" element={<Institute />} />
-          <Route path='/calendar' element={<Calendar />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/notifications" element={<NotificationTable />} />
-          <Route path="/subscriptions" element={<SubscriptionPlans />} />
-          <Route path="/add-institute" element={<SubscriptionForm />} />
-          <Route path="/visitors-details" element={<VisitorsDetails />} />
-          <Route path="/edit-faq-category" element={<EditFaqNotes />} />
-          <Route path="/edit-faq-form" element={<EditFaqForm />} />
-          <Route path='/add-new' element={<HelpCenterNotes />} />
+           <Route path="/calendar" element={<Calendar/>} />
+          <Route path="/payment" element={<PaymentTable/>} />
+          <Route path="/users" element={<Users/>} /> 
+          <Route path="/clock" element={<Clock/>} />
+          <Route path="/institute" element={<Institute/>} />
+          <Route path="/settings" element={<Settings/>} />
+          <Route path="/notifications" element={<NotificationTable/>} />
+          <Route path ="/subscriptions" element ={<SubscriptionPlans/>} />
+          <Route path ="/add-institute" element ={<SubscriptionForm/>} />
+          <Route path="/edituserform" element={<EditUserForm />} />
+          <Route path="/TotalNotifications" element={<TotalNotifications />} />
+
         </Route>
       </Routes>
     </Router>
