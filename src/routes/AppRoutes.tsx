@@ -12,9 +12,8 @@ import SubscriptionForm from '../components/SubscriptionsForm';
 import NotificationTable from '../NavBarLinks/NotificationTable';
 import ProfileACC from '../NavBarLinks/ProfileACC';
 import EditUserForm from '../components/EditUserForm';
-import Institute from '../components/Institute';
-import PersonalInfoForm from '../components/PersonalInfoForm';
-import GalleryInfo from '../components/GalleryInfo';
+import TotalNotifications from '../components/TotalNotifications';
+import Institute from '../NavBarLinks/Institute';
 
 
 const AppRoutes: React.FC = () => {
@@ -36,9 +35,8 @@ const AppRoutes: React.FC = () => {
           <Route path ="/subscriptions" element ={<SubscriptionPlans/>} />
           <Route path ="/add-institute" element ={<SubscriptionForm/>} />
           <Route path="/edituserform" element={<EditUserForm />} />
-         <Route path="/personalInfoform" element={<PersonalInfoForm />} />
-<Route path="/galleryInfo" element={<GalleryInfo />} />
-    
+          <Route path="/TotalNotifications" element={<TotalNotifications />} />
+
         </Route>
       </Routes>
     </Router>
