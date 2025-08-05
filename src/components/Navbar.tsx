@@ -11,6 +11,7 @@ import { FaClock } from "react-icons/fa";
 import { IoIosCard } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
+import { Tooltip } from "@material-tailwind/react";
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +48,7 @@ useEffect(() => {
   const activeClass = "bg-white w-12 h-12 rounded-[10px] ";
 
   return (
-    <div className="fixed pt-5 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-8">
+    <div className="fixed pt-10 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-8">
  
   <div
     className={`w-full p-4 flex items-center justify-between h-[80px] rounded-full transition-colors duration-300 pointer-events-auto ${
@@ -58,50 +59,65 @@ useEffect(() => {
           <img src={logo} alt="Logo" className="w-full h-full object-cover" />
         </Link>
 
-        <div className="hidden md:flex items-center justify-center space-x-18 flex-1">
-          <Link to="/home" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/home") ? activeClass : ""}`}>
-            <img src={group1} alt="Home" className="w-6 h-6 object-cover" />
+        <div className="hidden md:flex items-center justify-center space-x-18 flex-1 ">
+       
+        <Tooltip content="Home" placement="top" className="bg-white text-[#0E2B56]">
+           <Link to="/home" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/home") ? activeClass : ""}`}>
+            <img src={group1} alt="Home" className="w-6 h-6 object-cover " />
+             
           </Link>
+          </Tooltip>
+
+         <Tooltip content="Institute" placement="top" className="bg-white text-[#0E2B56]">
           <Link to="/institute" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/institute") ? activeClass : ""}`}>
           <FaUsers className="w-9 h-9 text-[#4F77B2]" />
-
           </Link>
+          </Tooltip>
+         
+          <Tooltip content="Calendar" placement="top" className="bg-white text-[#0E2B56]">
           <Link to="/calendar" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/calendar") ? activeClass : ""}`}>
           <FaCalendarDay className="w-6 h-6 text-[#4F77B2]" />
           </Link>
+          </Tooltip>
+          <Tooltip content="Clock" placement="top" className="bg-white text-[#0E2B56]">
           <Link to="/clock" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/clock") ? activeClass : ""}`}>
          <FaClock className="w-6 h-6 text-[#4F77B2]" />
-          </Link>
+          </Link></Tooltip>
+
+          <Tooltip content="Payment" placement="top" className="bg-white text-[#0E2B56]">
           <Link to="/payment" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/payment") ? activeClass : ""}`}>
         <IoIosCard  className="w-7 h-7 text-[#4F77B2]" />
           </Link>
+          </Tooltip>
+          <Tooltip content="Users" placement="top" className="bg-white text-[#0E2B56]">
           <Link to="/users" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/users") ? activeClass : ""}`}>
            <FaUser  className="w-6 h-6 text-[#4F77B2]" />
-
-          </Link>
-          <Link to="/settings" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/settings") ? activeClass : ""}`}>
-           
+          </Link></Tooltip>
+          <Tooltip content="Settings" placement="top" className="bg-white text-[#0E2B56]">
+          <Link to="/settings" className={`w-10 h-10 rounded-[10px] flex justify-center items-center ${isActive("/settings") ? activeClass : ""}`}>     
 <IoIosSettings className=" w-9 h-9 text-[#4F77B2]" />
-  
-
-          </Link>
+          </Link></Tooltip>
         </div>
-
+       
         <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 mt-2 md:mt-0">
-          <Link to="/notifications" className={`w-10 h-10 rounded-full flex justify-center items-center ${isActive("/notifications") ? activeClass : ""}`}>
+         <Tooltip content="Notifications" placement="top" className="bg-white text-[#0E2B56]">
+          <Link to="/TotalNotifications" className={`w-10 h-10 rounded-full flex justify-center items-center ${isActive("/TotalNotifications") ? activeClass : ""}`}>
             <img src={notify} alt="Notifications" className="w-full h-full object-cover" />
-          </Link>
+          </Link></Tooltip>
          <div className="relative" ref={profileRef}>
+<Tooltip content="Profile" placement="top" className="bg-white text-[#0E2B56]">
+
  <button
   onClick={() => setShowProfileMenu(prev => !prev)}
   className={`w-10 h-10 rounded-full flex justify-center items-center ${isActive("/profile") ? activeClass : ""}`}
 >
   <img src={profile} alt="Profile" className="w-full h-full object-cover rounded-full" />
-</button>
+</button> 
+</Tooltip>
   {showProfileMenu && (
     <div className="absolute right-0  w-34 bg-cyan-100/50 shadow-lg rounded-2xl p-4 flex flex-col space-y-2 z-50">
        <Link
-        to="/TotalNotifications"
+        to="/notifications"
         className="bg-[#002F67] text-white text-sm px-4 py-2 rounded-md text-center hover:opacity-90"
       >
         Notifications
