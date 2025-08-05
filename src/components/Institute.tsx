@@ -1,4 +1,4 @@
-// src/components/Institute.tsx
+
 
 import React, { useState } from "react";
 import filter from "../assets/filter.png";
