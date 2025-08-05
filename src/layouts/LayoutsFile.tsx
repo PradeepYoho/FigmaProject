@@ -18,11 +18,7 @@ const LayoutsFile: React.FC = () => {
         >
          <Navbar />
          
-<<<<<<< HEAD
-          <div className="min-h-screen pt-20">
-=======
-          <div className="pt-20">
->>>>>>> 938766ef7732eeeb247ee3847a299fc71f50626d
+          <div className="pt-20 min-h-screen">
             <Outlet />
           </div>
         </div>

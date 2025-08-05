@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TicketsChat from "./TicketsChat"; 
+import TicketsChat from "./TicketsChat";
 
 const tickets = [
   {
@@ -71,13 +71,12 @@ const Tickets = () => {
                 </button>
 
                 <span
-                  className={`px-4 py-1 rounded-md text-sm font-semibold w-20 text-center ${
-                    ticket.priority === "Low"
+                  className={`px-4 py-1 rounded-md text-sm font-semibold w-20 text-center ${ticket.priority === "Low"
                       ? "bg-white text-[#0E2B56]"
                       : ticket.priority === "Medium"
-                      ? "bg-yellow-400 text-[#0E2B56]"
-                      : "bg-red-500 text-white"
-                  }`}
+                        ? "bg-yellow-400 text-[#0E2B56]"
+                        : "bg-red-500 text-white"
+                    }`}
                 >
                   {ticket.priority}
                 </span>
