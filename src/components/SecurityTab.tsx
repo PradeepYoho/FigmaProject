@@ -6,7 +6,7 @@ const SecurityTab: React.FC = () => {
   const [showConfirm, setShowConfirm] = useState(false);
 
   return (
-    <div className="rounded-xl bg-white/20 backdrop-blur-md p-6 shadow-md space-y-6 mb-50">
+    <div className="rounded-xl bg-white/20 backdrop-blur-md p-6 shadow-md space-y-6 ">
       
       <h2 className="text-xl font-semibold text-[#0E2B56]">Change Password</h2>
 
@@ -51,7 +51,6 @@ const SecurityTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Button */}
       <div className="flex justify-end">
         <button className="px-5 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition">
           Change Password
