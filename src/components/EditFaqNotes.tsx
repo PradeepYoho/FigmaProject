@@ -12,13 +12,13 @@ const EditFaqNotes = () => {
 
 
   return (
-    <div className="relative">
-      <div className="max-w-2xl bg-gradient-to-br from-blue-200 to-blue-400 mx-auto rounded-xl p-6 shadow-lg">
-        <h2 className="text-lg font-semibold text-blue-800 mb-8">Edit FAQ</h2>
+    <div className="relative pt-10">
+      <div className="max-w-2xl  mx-auto rounded-xl p-6 shadow-2xl">
+        <h2 className="text-lg font-semibold text-[#0E2B56] mb-8">Edit FAQ</h2>
 
         <form className="space-y-6">
           <div>
-            <label htmlFor="title" className="block text-md font-medium text-blue-700 mb-1">
+            <label htmlFor="title" className="block text-md font-medium text-[#0E2B56] mb-1">
               Title
             </label>
             <input
@@ -30,7 +30,7 @@ const EditFaqNotes = () => {
           </div>
 
           <div>
-            <label htmlFor="description" className="block text-md font-medium text-blue-700 mb-1">
+            <label htmlFor="description" className="block text-md font-medium text-[#0E2B56] mb-1">
               Description
             </label>
             <input

@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+
+interface FaqItem {
+  question: string;
+  category: string;
+  status: boolean;
+}
 
 const FAQs = () => {
   const [showForm, setShowForm] = useState(false);
-
-  const faqs = [
+  const [faqList, setFaqList] = useState<FaqItem[]>([
     {
       question: "How do I set effective community guidelines?",
       category: "Community Management",
@@ -36,7 +42,7 @@ const FAQs = () => {
       category: "Student Management",
       status: true,
     },
-  ];
+  ]);
 
   const categories = [
     "Community Management",
@@ -47,8 +53,16 @@ const FAQs = () => {
     "Student Management",
   ];
 
+  const handleDelete = (index: number) => {
+    const updatedList = [...faqList];
+    updatedList.splice(index, 1);
+    setFaqList(updatedList);
+    toast.success("FAQ deleted successfully!");
+  };
+
   return (
     <div className="relative space-y-3">
+                  <ToastContainer position="top-right" autoClose={2000} />
       <div className="flex justify-between items-center mb-4">
         <input
           type="text"
@@ -68,13 +82,13 @@ const FAQs = () => {
         <thead className="bg-[#0E2B56] text-white">
           <tr>
             <th className="px-6 py-3">Question</th>
-            <th className="px-6 py-3">Categorie Name</th>
+            <th className="px-6 py-3">Category Name</th>
             <th className="px-6 py-3">Status</th>
             <th className="px-6 py-3 text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {faqs.map((faq, index) => (
+          {faqList.map((faq, index) => (
             <tr
               key={index}
               className="border-b border-white border-opacity-10 hover:bg-opacity-20 transition"
@@ -82,22 +96,22 @@ const FAQs = () => {
               <td className="px-6 py-4 text-gray-800">{faq.question}</td>
               <td className="px-6 py-4 text-gray-800">{faq.category}</td>
               <td className="px-6 py-4">
-
-                <label className="inline-flex items-center cursor-pointer">
-                  <input type="checkbox" value="" className="sr-only peer" />
-                  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600 dark:peer-checked:bg-green-600"></div>
-                  <span className="ms-3 text-sm font-medium text-green-500 dark:text-gray-300"></span>
-                </label>
-
+                        <label className="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" className="sr-only peer" />
+                            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600 dark:peer-checked:bg-green-600"></div>
+                        </label>
               </td>
               <td className="px-6 py-4">
                 <div className="flex justify-end gap-6">
                   <Link to="/edit-faq-form" className="text-blue-700 hover:text-blue-900">
                     <FaEdit />
                   </Link>
-                  <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
+                  <button
+                    onClick={() => handleDelete(index)}
+                    className="text-orange-600 hover:text-orange-800"
+                  >
                     <FaTrash />
-                  </Link>
+                  </button>
                 </div>
               </td>
             </tr>
@@ -117,19 +131,19 @@ const FAQs = () => {
                 &times;
               </button>
             </div>
-            <label htmlFor="title" className="text-lg font-medium text-blue-800 mb-2">Title</label>
+            <label className="text-lg font-medium text-blue-800 mb-2">Title</label>
             <input
               type="text"
               placeholder="Title"
               className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
             />
-            <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Description</label>
+            <label className="text-lg font-medium text-blue-800 mb-2">Description</label>
             <input
               type="text"
               placeholder="Description"
               className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
             />
-            <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Select Category</label>
+            <label className="text-lg font-medium text-blue-800 mb-2">Select Category</label>
             <select className="w-full px-4 py-2 mb-6 rounded-md border focus:outline-none text-gray-700">
               <option value="">Select Category</option>
               {categories.map((cat, i) => (

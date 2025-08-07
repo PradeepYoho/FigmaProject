@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const EditFaqForm = () => {
     return (
         <div className=" max-w-2xl bg-gradient-to-br from-blue-200 to-blue-400 mx-auto rounded-xl p-6 shadow-lg">
-            <h2 className="text-lg font-semibold text-blue-800 mb-8">
+            <h2 className="text-lg font-semibold text-[#0E2B56] mb-8">
                 Edit FAQ
             </h2>
 

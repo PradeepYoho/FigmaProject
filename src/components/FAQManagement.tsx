@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
-const faqCategories = [
+const initialCategories = [
     "User Management",
     "Content Management",
     "Course Management",
@@ -13,9 +14,18 @@ const faqCategories = [
 
 const FAQManagement = () => {
     const [showModal, setShowModal] = useState(false);
+    const [categories, setCategories] = useState(initialCategories);
+
+    const handleDelete = (index: number) => {
+        const updated = categories.filter((_, i) => i !== index);
+        setCategories(updated);
+        toast.success("Category deleted successfully!");
+    };
 
     return (
         <div className="relative space-y-3">
+            <ToastContainer position="top-right" autoClose={2000} />
+            
             <div className="flex justify-between items-center mb-4">
                 <input
                     type="text"
@@ -37,7 +47,7 @@ const FAQManagement = () => {
                 <div className="flex-1 text-right">Actions</div>
             </div>
 
-            {faqCategories.map((name, index) => (
+            {categories.map((name, index) => (
                 <div
                     key={index}
                     className="flex items-center justify-between bg-white/40 backdrop-blur-md px-6 py-3 border-b border-white/30 text-md text-[#0E2B56] rounded-xl"
@@ -46,8 +56,8 @@ const FAQManagement = () => {
 
                     <div className="flex-1 flex justify-center">
                         <label className="inline-flex items-center cursor-pointer">
-                            <input type="checkbox" value="" className="sr-only peer" />
-                            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600 dark:peer-checked:bg-green-600"></div>
+                            <input type="checkbox" className="sr-only peer" />
+                            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600 dark:peer-checked:bg-green-600"></div>
                         </label>
                     </div>
 
@@ -55,9 +65,12 @@ const FAQManagement = () => {
                         <Link to="/edit-faq-category" className="text-blue-700 hover:text-blue-900">
                             <FaEdit />
                         </Link>
-                        <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
+                        <button
+                            onClick={() => handleDelete(index)}
+                            className="text-orange-600 hover:text-orange-800"
+                        >
                             <FaTrash />
-                        </Link>
+                        </button>
                     </div>
                 </div>
             ))}

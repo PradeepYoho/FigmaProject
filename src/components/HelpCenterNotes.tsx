@@ -12,22 +12,22 @@ const HelpCenterQuestions = () => {
         >
           <FaTimes />
         </Link>
-        <h2 className="text-lg font-semibold mb-6 text-white">
+        <h2 className="text-lg font-semibold mb-6 text-[#0E2B56]">
           Add Help Information
         </h2>
 
         <div className="space-y-4">
           <div>
-            <label className="block mb-1 text-white">Title</label>
+            <label className="block mb-1 text-[#0E2B56]">Title</label>
             <input
               type="text"
-              className="w-full px-4 py-2 rounded-md bg-white/20 text-white border border-white/30 outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2 rounded-md bg-white/20 text-[#0E2B56] border border-white/30 outline-none focus:ring-2 focus:ring-blue-400"
               placeholder="Enter title"
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-white">Module</label>
+            <label className="block mb-1 text-[#0E2B56]">Module</label>
             <input
               type="text"
               className="w-full px-4 py-2 rounded-md bg-white/20 text-white border border-white/30 outline-none focus:ring-2 focus:ring-blue-400"
@@ -36,7 +36,7 @@ const HelpCenterQuestions = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-white">Description</label>
+            <label className="block mb-1 text-[#0E2B56]">Description</label>
             <input
               type="text"
               className="w-full px-4 py-2 rounded-md bg-white/20 text-white border border-white/30 outline-none focus:ring-2 focus:ring-blue-400"
