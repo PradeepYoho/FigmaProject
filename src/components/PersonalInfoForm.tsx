@@ -11,14 +11,14 @@ const PersonalInfoForm: React.FC = () => {
       
    
     <div className="mx-auto p-6 space-y-6">
-      {/* Section: Title */}
+      
       <div>
         <h2 className="text-xl font-bold text-gray-800">Personal Info</h2>
         <p className="text-sm text-gray-500">Add logo, gallery information</p>
       </div>
 
-      {/* Block 1: Institute Details */}
-      <div className="  bg-gradient-to-br from-blue-100 to-blue-300 border rounded-xl p-4 shadow-md space-y-4">
+    
+      <div className="  border rounded-xl p-4 shadow-md space-y-4">
         <h3 className="text-lg font-semibold text-gray-700">Enter Your Institute Details Here</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -36,8 +36,8 @@ const PersonalInfoForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Block 2: Address Info */}
-      <div className=" bg-gradient-to-br from-blue-100 to-blue-300 border rounded-xl p-4 shadow-md space-y-4">
+      
+      <div className=" border rounded-xl p-4 shadow-md space-y-4">
         <h3 className="text-lg font-semibold text-gray-700">Enter Your Address Information Here</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -80,7 +80,7 @@ const PersonalInfoForm: React.FC = () => {
       </div>
 
       
-      <div className=" bg-gradient-to-br from-blue-100 to-blue-300 border rounded-xl p-4 shadow-md space-y-4">
+      <div className="  border rounded-xl p-4 shadow-md space-y-4">
         <h3 className="text-lg font-semibold text-gray-700">Enter Your Contact Details Here</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -95,7 +95,7 @@ const PersonalInfoForm: React.FC = () => {
       </div>
 
       
-      <div className="bg-gradient-to-br from-blue-100 to-blue-300 border rounded-xl p-4 shadow-md space-y-4">
+      <div className=" border rounded-xl p-4 shadow-md space-y-4">
         <h3 className="text-lg font-semibold text-gray-700">Enter Your Subscription Information Here</h3>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Subscription</label>
@@ -106,13 +106,13 @@ const PersonalInfoForm: React.FC = () => {
       
       <div className="flex justify-between pt-4">
   <Link
-    to="/previous-route" // change to actual previous path
+    to="/institute" 
     className="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100"
   >
     Back
   </Link>
   <Link
-    to="/galleryinfo" // change to actual next path
+    to="/galleryinfo" 
     className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b]"
   >
     Next

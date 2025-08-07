@@ -1,16 +1,17 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-const App = () => {
+
+const Documentform = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 flex items-center justify-center p-6">
-      <div className="bg-white/50 backdrop-blur-md rounded-xl w-full max-w-4xl shadow-lg p-6">
-        {/* Step Indicator */}
+    <div >
+      <div className="p-6">
+        
         <div className="flex justify-between mb-6">
           {["Personal Info", "Gallery Info", "Social Links", "Documents", "Account Details"].map((step, index) => (
             <div key={index} className="flex flex-col items-center text-sm text-gray-700">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                  index === 2 ? "bg-blue-600 text-white" : "bg-gray-200"
+                  index === 3 ? "bg-blue-600 text-white" : "bg-gray-200"
                 }`}
               >
                 {index + 1}
@@ -20,28 +21,60 @@ const App = () => {
           ))}
         </div>
 
-        {/* Social Links Section */}
-        <h2 className="text-lg font-semibold mb-2">Social Links</h2>
-        <p className="text-sm text-gray-700 mb-4">Add Social Link</p>
+      
+        <h2 className="text-lg font-semibold mb-2">Documents</h2>
+        <p className="text-sm text-gray-700 mb-4">Add Institute Docs</p>
 
-        <form className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input className="input-style" placeholder="Twitter" />
-            <input className="input-style" placeholder="Facebook" />
-            <input className="input-style" placeholder="Instagram" />
-            <input className="input-style" placeholder="LinkedIn" />
-            <input className="input-style md:col-span-2" placeholder="Pinterest" />
-          </div>
+       <form className="space-y-6">
+  
+  <div>
+    <label className="block font-medium mb-1 text-sm text-gray-700">GST Number</label>
+    <input
+      type="text"
+      className="w-full border border-blue-500 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-between mt-6">
-            <button className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400">Back</button>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Next</button>
-          </div>
-        </form>
+
+  <div>
+    <label className="block font-medium mb-1 text-sm text-gray-700">PAN Number</label>
+    <input
+      type="text"
+      className="w-full border border-blue-500 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  
+  <div>
+    <label className="block font-medium mb-1 text-sm text-gray-700">License Number</label>
+    <input
+      type="text"
+      className="w-full border border-blue-500 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  
+  <div className="flex justify-between items-center mb-6">
+           <Link
+    to="/Sociallink" 
+    className="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100"
+  >
+    Back
+  </Link>
+  <Link
+    to="/AccountDetails" 
+    className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b]"
+  >
+    Next
+  </Link>
+          
+          
+        </div>
+</form>
+
       </div>
     </div>
   );
 };
 
-export default App;
+export default Documentform;

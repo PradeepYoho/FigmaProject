@@ -1,9 +1,10 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
-const AccountDetailsForm = () => {
+const AccountDetail = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400 p-6">
-      <div className="max-w-5xl mx-auto bg-white/30 backdrop-blur-md rounded-xl shadow-lg p-8 space-y-8">
+    <div className="p-4" >
+      <div>
+
         {/* Stepper */}
         <div className="flex justify-between items-center text-white font-medium text-sm">
           {["Personal Info", "Gallery Info", "Social Links", "Documents", "Account Details"].map((step, index) => (
@@ -16,45 +17,100 @@ const AccountDetailsForm = () => {
           ))}
         </div>
 
-        {/* Form Sections */}
-        <form className="space-y-6">
-          {/* Branch Details */}
-          <div>
-            <h2 className="text-xl font-semibold text-white mb-4">Enter Your Branch Details Here</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" placeholder="Branch Name" className="input" />
-              <input type="text" placeholder="Phone" className="input" />
-              <input type="text" placeholder="Alternate Phone" className="input" />
-              <input type="text" placeholder="Address Line 1" className="input" />
-              <input type="text" placeholder="Address Line 2" className="input" />
-              <input type="text" placeholder="Country" className="input" />
-              <input type="text" placeholder="State" className="input" />
-              <input type="text" placeholder="City" className="input" />
-              <input type="text" placeholder="Pin Code" className="input col-span-2" />
-            </div>
-          </div>
+      
+        <form className="space-y-6 pt-6">
 
-          {/* Contact Details */}
-          <div>
-            <h2 className="text-xl font-semibold text-white mb-4">Enter Your Contact Details Here</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" placeholder="Full Name" className="input" />
-              <input type="text" placeholder="Last Name" className="input" />
-              <input type="email" placeholder="Email" className="input" />
-              <input type="text" placeholder="Phone Number" className="input" />
-              <input type="text" placeholder="Profile Image" className="input col-span-2" />
-            </div>
-          </div>
+  
+  <div>
+    <h2 className="text-xl font-semibold text-white mb-4">Enter Your Branch Details Here</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Branch Name</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Phone</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Alternate Phone</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Address Line 1</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Address Line 2</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Country</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">State</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">City</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div className="md:col-span-2">
+        <label className="block text-sm font-medium text-white mb-1">Pin Code</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+    </div>
+  </div>
 
-          {/* Buttons */}
-          <div className="flex justify-between mt-6">
-            <button type="button" className="bg-white text-black px-6 py-2 rounded-lg shadow hover:bg-gray-100">Back</button>
-            <button type="submit" className="bg-blue-800 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-900">Next</button>
-          </div>
-        </form>
+  
+  <div>
+    <h2 className="text-xl font-semibold text-white mb-4">Enter Your Contact Details Here</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Full Name</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Last Name</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Email</label>
+        <input type="email" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-white mb-1">Phone Number</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+      <div className="md:col-span-2">
+        <label className="block text-sm font-medium text-white mb-1">Profile Image</label>
+        <input type="text" className="w-full border border-[#0E2B56] rounded px-3 py-2" />
+      </div>
+    </div>
+  </div>
+
+  
+  <div className="flex justify-between mt-6">
+    <Link
+      to="/DocumentForm"
+      className="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100"
+    >
+      Back
+    </Link>
+    <Link
+      to="/institute"
+      className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b]"
+    >
+      Submit
+    </Link>
+  </div>
+</form>
+
+
       </div>
     </div>
   );
 };
 
-export default AccountDetailsForm;
+export default AccountDetail;

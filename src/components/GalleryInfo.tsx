@@ -14,16 +14,15 @@ const UploadBox = ({ title }: { title: string }) => {
       </div>
       <textarea
         className="mt-3 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/70"
-        placeholder="Description"
-      />
+        placeholder="Description" />
     </div>
   );
 };
 
 const App = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-100 to-blue-300 items-center justify-center p-6 w-full">
-      <div className="p-6">
+    <div >
+      <div className="p-3" >
       
         <div className="flex justify-between mb-6">
           {["Personal Info", "Gallery Info", "Social Links", "Documents", "Account Details"].map((step, index) => (
@@ -50,13 +49,13 @@ const App = () => {
       
         <div className="flex justify-between items-center mb-6">
            <Link
-    to="/previous-route" 
+    to="/personalInfoform" 
     className="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100"
   >
     Back
   </Link>
   <Link
-    to="/SocialLinks" 
+    to="/Sociallink" 
     className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b]"
   >
     Next
