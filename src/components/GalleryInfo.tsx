@@ -21,7 +21,8 @@ const UploadBox = ({ title }: { title: string }) => {
 
 const App = () => {
   return (
-    <div className="p-6">
+    <div className="
+    p-6">
       <div className="bg-gradient-to-br from-blue-100 to-blue-300  backdrop-blur-md rounded-xl shadow-lg p-6">
       
         <div className="flex justify-between mb-6">
