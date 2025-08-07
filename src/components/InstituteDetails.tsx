@@ -52,14 +52,15 @@ const InstituteDetails = () => {
           <input type="text" id="address" className="w-full bg-white/10 px-4 py-2 rounded-lg border border-blue-900 text-blue-900" />
         </div>
       </div>
-    </div><div className="flex justify-between mt-6">
-
+    </div>
+    <div className="flex justify-between mt-6">
         <Link
           to="/edit" className="bg-white px-6 py-2 rounded-lg font-semibold text-blue-900">
           Edit
         </Link>
         <button className="bg-blue-900 px-6 py-2 rounded-lg font-semibold text-white">Suspend</button>
-      </div></>
+      </div>
+      </>
 
   )
 }

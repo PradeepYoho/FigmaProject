@@ -38,7 +38,7 @@ const SidebarSetting = () => {
                 className={`w-full text-left px-4 py-2 rounded-lg font-medium text-sm border text-blue-800 ${
                   activeTab === item.key
                     ? 'bg-blue-900 text-white'
-                    : 'border-blue-900 hover:bg-blue-500 hover:text-white'
+                    : 'border-blue-900 hover:bg-blue-300 hover:text-blue-800'
                 }`}
               >
                 {item.label}
