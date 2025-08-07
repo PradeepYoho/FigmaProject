@@ -22,32 +22,32 @@ const AccountTab: React.FC = () => {
           <h3 className="text-2xl font-semibold text-[#0E2B56] mb-4">Details</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 text-sm text-[#0E2B56]">
             <div>
-              <p className="text-[#0E2B56] text-2xl">First Name</p>
-              <p className="font-semibold text-2xl">Chandran R</p>
+              <p className="text-black text-2xl font-semibold">First Name</p>
+              <p className=" text-2xl">Chandran R</p>
             </div>
             <div>
-              <p className="text-[#0E2B56] text-2xl">Last Name</p>
-              <p className="font-semibold text-2xl">Doe</p>
+              <p className="text-black text-2xl font-semibold">Last Name</p>
+              <p className="text-2xl">Doe</p>
             </div>
             <div>
-              <p className="text-[#0E2B56] text-2xl ">User Name</p>
-              <p className="font-semibold text-2xl">User 01</p>
+              <p className="text-black text-2xl font-semibold ">User Name</p>
+              <p className=" text-2xl">User 01</p>
             </div>
             <div>
-              <p className="text-[#0E2B56] text-2xl">Designation</p>
-              <p className="font-semibold text-2xl">Student</p>
+              <p className="text-black text-2xl font-semibold">Designation</p>
+              <p className="text-2xl">Student</p>
             </div>
             <div>
-              <p className="text-[#0E2B56] text-2xl">Email</p>
-              <p className="font-semibold text-2xl">Chandran1@gmail.com</p>
+              <p className="text-black text-2xl font-semibold">Email</p>
+              <p className=" text-2xl">Chandran1@gmail.com</p>
             </div>
             <div>
-              <p className="text-[#0E2B56] text-2xl">Contact</p>
-              <p className="font-semibold text-2xl">+91 98765656789</p>
+              <p className="text-black text-2xl font-semibold">Contact</p>
+              <p className="text-2xl">+91 98765656789</p>
             </div>
             <div>
-              <p className="text-[#0E2B56] text-2xl">Status</p>
-              <p className="font-semibold text-green-400 text-2xl">Active</p>
+              <p className="text-black text-2xl font-semibold">Status</p>
+              <p className=" text-green-600 text-2xl">Active</p>
             </div>
           </div>
         </div>

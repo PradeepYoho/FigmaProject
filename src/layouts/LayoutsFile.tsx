@@ -8,7 +8,7 @@ import blurbg from '../assets/blur-bg.png';
 const LayoutsFile: React.FC = () => {
   return (
     <div
-      className="min-h-screen bg-fixed bg-cover bg-center"
+      className="min-h-screen bg-fixed bg-cover bg-center "
       style={{ backgroundImage: `url(${bgimage2})` }}
     >
       <div className="p-4">

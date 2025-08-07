@@ -29,7 +29,7 @@ const ProfileACC: React.FC = () => {
         </button>
       </div>
 
-      <div className="flex-1 rounded-lg p-4 ">
+      <div className="flex-1 rounded-lg ">
         {activeTab === 'account' ? <AccountTab /> : <SecurityTab />}
       </div>
     </div>
