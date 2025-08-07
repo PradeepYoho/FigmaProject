@@ -47,6 +47,57 @@ const Navbar: React.FC = () => {
 
   const activeClass = "bg-white rounded-[10px] ";
 
+
+const [filterStatus, setFilterStatus] = useState<string>("Other");
+
+
+  const [notifications, setNotifications] = useState([
+  {
+    id: 1,
+    name: 'Chendran',
+    message: 'It is a long established fact that a reader will be distracted',
+    time: '4 Month Ago',
+    status: 'Unread',
+    profileImage: '/src/assets/notifiProfile.png',
+  },
+  {
+    id: 2,
+    name: 'Store Verification Done',
+    message: 'We have successfully received your request.',
+    time: '4 Month Ago',
+    status: 'Unread',
+    profileImage: '/src/assets/notifiProfile.png',
+  },
+  {
+    id: 3,
+    name: 'Check Your Mail.',
+    message: "All done! Now check your inbox as you're in for a sweet treat!",
+    time: '4 Month Ago',
+    status: 'Viewed',
+    profileImage: '/src/assets/notifiProfile.png',
+  },
+  {
+    id: 4,
+    name: 'Check Your Mail.',
+    message: "All done! Now check your inbox as you're in for a sweet treat!",
+    time: '4 Month Ago',
+    status: 'Viewed',
+    profileImage: '/src/assets/notifiProfile.png',
+  },
+]);
+
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 10);
+    setShowNotifications(false); 
+    setShowProfileMenu(false);
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
   return (
     <div className="fixed pt-10 top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-8">
       <div className={`w-full p-4 flex items-center justify-between h-[80px] rounded-full transition-colors duration-300 pointer-events-auto ${scrolled ? 'bg-white/20 shadow-md backdrop-blur-md' : 'bg-cyan-100/50'}`}>
@@ -109,50 +160,93 @@ const Navbar: React.FC = () => {
               </button>
             </Tooltip>
 
-            {showNotifications && (
-              <div className="absolute top-12 right-0 z-50 w-100 ">
-                <div className="absolute -top-2 right-4  border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white/80" />
-                <div className="bg-white/80 shadow-md rounded-lg p-4">
-                  <h2 className="text-lg font-semibold text-[#1F2B4A] mb-2">Notifications</h2>
-                  <div className="flex flex-col gap-3 overflow-y-auto ">
-                    {[
-                      {
-                        id: 1,
-                        name: 'Chendran',
-                        message: 'Reader will be distracted...',
-                        time: '4 Month Ago',
-                        status: 'Unread',
-                      },
-                      {
-                        id: 2,
-                        name: 'Store Verification Done',
-                        message: 'Successfully received your request.',
-                        time: '4 Month Ago',
-                        status: 'Unread',
-                      },
-                      {
-                        id: 3,
-                        name: 'Check Your Mail.',
-                        message: "All done! Now check your inbox.",
-                        time: '4 Month Ago',
-                        status: 'View',
-                      },
-                    ].map((item) => (
-                      <div key={item.id} className="bg-white rounded p-2 shadow-sm text-lg">
-                        <div className="font-medium text-[#1F2B4A]">{item.name}</div>
-                        <div className="text-gray-500">{item.message}</div>
-                        <div className="flex justify-between items-center mt-1 text-xs text-gray-400">
-                          <span>{item.time}</span>
-                          <span className={`px-2 py-0.5 rounded text-white text-lg ${item.status === 'Unread' ? 'bg-[#0D2C5B]' : 'bg-gray-400'}`}>
-                            {item.status}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
+         {showNotifications && (
+  <div className="absolute top-12 right-0 z-50 w-96">
+    <div className="absolute -top-2 right-3 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white" />
+    <div className="bg-white shadow-lg rounded-xl p-4 max-h-[600px] flex flex-col">
+      
+      <div className="flex justify-between items-center mb-3">
+        <h2 className="text-lg font-semibold text-[#1F2B4A]">All Notifications</h2>
+        <button
+          className="text-sm text-[#1F2B4A] font-semibold hover:underline"
+          onClick={() =>
+            setNotifications((prev) =>
+              prev.map((n) => ({ ...n, status: "Viewed" }))
+            )
+          }
+        >
+          Mark All As Read
+        </button>
+      </div>
+
+      <select
+        className="border rounded-md px-3 py-2 text-sm mb-3 text-[#1F2B4A]"
+        value={filterStatus}
+        onChange={(e) => setFilterStatus(e.target.value)}
+      >
+        <option value="Other">Other</option>
+        <option value="Unread">Unread</option>
+        <option value="New">New</option>
+        <option value="Viewed">Viewed</option>
+      </select>
+
+      <div className="flex flex-col gap-4 overflow-y-auto mb-3 max-h-90 pr-1">
+        {notifications
+          .filter((n) =>
+            filterStatus === "Other" ? true : n.status === filterStatus
+          )
+          .map((item) => (
+            <div
+  key={item.id}
+  className="bg-white rounded-xl p-4 shadow text-sm flex gap-3 items-start"
+>
+  
+
+  <div className="flex-1">
+  <div className="flex justify-between items-center mb-5">
+  
+    <div className="flex items-center gap-2">
+      <img
+        src={item.profileImage}
+        alt={item.name}
+        className="w-10 h-10 rounded-full object-cover"
+      />
+      <h3 className="font-bold text-[#1F2B4A]">{item.name}</h3>
+    </div>
+
+    
+    <span className="text-xs text-gray-400">{item.time}</span>
+  </div>
+
+    <p className="text-gray-500 mt-2 mb-5 items-start justify-start ">{item.message}</p>
+ <div className="flex gap-2 justify-end">
+  {item.status === "Unread" ? (
+    <span className="text-white px-4 py-1 text-xs font-semibold bg-[#0D2C5B] rounded-tl-[8px] rounded-br-[8px]">
+      Unread
+    </span>
+  ) : (
+    <span className="text-[#0D2C5B] px-4 py-1 text-xs font-semibold border border-[#0D2C5B] bg-white rounded-tl-[8px] rounded-br-[8px]">
+      New
+    </span>
+  )}
+      <span className="border border-[#0D2C5B] text-[#0D2C5B] px-3 py-1  rounded-tl-[8px] rounded-br-[8px] text-xs">
+        New
+      </span>
+    </div>
+  </div>
+</div>
+
+          ))}
+      </div>
+
+      <button className="w-full bg-[#0D2C5B] text-white font-medium py-2 rounded-md hover:bg-[#3e506d] transition">
+        View All
+      </button>
+    </div>
+  </div>
+)}
+
+
           </div>
 
          
@@ -168,19 +262,19 @@ const Navbar: React.FC = () => {
 
             {showProfileMenu && (
               <div className="absolute right-0 top-12 z-50">
-                <div className="absolute -top-2 right-4 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-cyan-100/50" />
-                <div className="w-40 bg-cyan-100/50 shadow-lg rounded-2xl p-4 flex flex-col space-y-2">
-                  <Link to="/notifications" className="bg-[#002F67] text-white text-sm px-4 py-2 rounded-md text-center hover:opacity-90">
+                <div className="absolute -top-2 right-3  border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-white" />
+                <div className="w-40 bg-white shadow-lg rounded-2xl p-4 flex flex-col space-y-2">
+                  <Link to="/notifications" className="border border-[#0D2C5B] rounded-tl-[8px] rounded-br-[8px] text-[#0D2C5B] text-sm px-4 py-2  text-center hover:bg-[#0D2C5B] hover:text-white transition">
                     Notifications
                   </Link>
-                  <Link to="/profile" className="bg-[#002F67] text-white text-sm px-4 py-2 rounded-md text-center hover:opacity-90">
+                  <Link to="/profile" className="border border-[#0D2C5B] rounded-tl-[8px] rounded-br-[8px] text-[#0D2C5B] text-sm px-4 py-2  text-center hover:bg-[#0D2C5B] hover:text-white transition">
                     Profile
                   </Link>
                   <button
                     onClick={() => {
                       console.log("Logout clicked");
                     }}
-                    className="bg-[#002F67] text-white text-sm px-4 py-2 rounded-md hover:opacity-90"
+                    className="border border-[#0D2C5B] bg-white rounded-tl-[8px] rounded-br-[8px] text-[#0D2C5B] text-sm px-4 py-2  hover:bg-[#0D2C5B] hover:text-white transition"
                   >
                     Logout
                   </button>
