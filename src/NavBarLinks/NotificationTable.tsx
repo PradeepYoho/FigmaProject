@@ -28,7 +28,7 @@ const NotificationTable: React.FC = () => {
           onClick={toggleOverlay}
           className="bg-[#072C56] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#0e3a6d]"
         >
-          + Add Institute
+          + Add Notifications
         </button>
       </div>
 

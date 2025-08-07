@@ -21,7 +21,7 @@ import Institute from '../components/Institute';
 import ProfileACC from '../NavBarLinks/ProfileACC';
 import HelpCenterNotes from '../components/HelpCenterNotes';
 import EditUserForm from '../components/EditUserForm';
-import TotalNotifications from '../components/TotalNotifications';
+
 
 
 const AppRoutes: React.FC = () => {
@@ -57,7 +57,7 @@ const AppRoutes: React.FC = () => {
           <Route path ="/subscriptions" element ={<SubscriptionPlans/>} />
           <Route path ="/add-institute" element ={<SubscriptionForm/>} />
           <Route path="/edituserform" element={<EditUserForm />} />
-          <Route path="/TotalNotifications" element={<TotalNotifications />} />
+          
 
         </Route>
       </Routes>
