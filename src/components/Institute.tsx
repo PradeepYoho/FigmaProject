@@ -1,4 +1,4 @@
-// src/components/Institute.tsx
+
 
 import React, { useState } from "react";
 import filter from "../assets/filter.png";
@@ -26,7 +26,7 @@ const Institute: React.FC = () => {
           <span>{isFilterVisible ? "Hide Filter" : "Show Filter"}</span>
         </button>
         <Link
-  to="/add-institute"
+  to="/PersonalInfoForm"
   className="bg-[#072C56] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#0e3a6d]"
 >
   +Add Institute
