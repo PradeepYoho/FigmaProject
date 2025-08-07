@@ -70,7 +70,7 @@ const FAQs = () => {
             <th className="px-6 py-3">Question</th>
             <th className="px-6 py-3">Categorie Name</th>
             <th className="px-6 py-3">Status</th>
-            <th className="px-6 py-3">Actions</th>
+            <th className="px-6 py-3 text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -82,22 +82,23 @@ const FAQs = () => {
               <td className="px-6 py-4 text-gray-800">{faq.question}</td>
               <td className="px-6 py-4 text-gray-800">{faq.category}</td>
               <td className="px-6 py-4">
-                        <label className="inline-flex items-center cursor-pointer">
-                            <input type="checkbox" className="sr-only peer" defaultChecked />
-                            <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:bg-green-500 relative transition-all duration-300">
-                                <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-full" />
-                            </div>
-                        </label>
+
+                <label className="inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" className="sr-only peer" />
+                  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600 dark:peer-checked:bg-green-600"></div>
+                  <span className="ms-3 text-sm font-medium text-green-500 dark:text-gray-300"></span>
+                </label>
+                
               </td>
               <td className="px-6 py-4">
-                    <div className="flex justify-end gap-6">
-                        <Link to="/edit-faq-category" className="text-blue-700 hover:text-blue-900">
-                            <FaEdit />
-                        </Link>
-                        <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
-                            <FaTrash />
-                        </Link>
-                    </div>
+                <div className="flex justify-end gap-6">
+                  <Link to="/edit-faq-category" className="text-blue-700 hover:text-blue-900">
+                    <FaEdit />
+                  </Link>
+                  <Link to="/delete-category" className="text-orange-600 hover:text-orange-800">
+                    <FaTrash />
+                  </Link>
+                </div>
               </td>
             </tr>
           ))}
@@ -116,19 +117,19 @@ const FAQs = () => {
                 &times;
               </button>
             </div>
-                        <label htmlFor="title" className="text-lg font-medium text-blue-800 mb-2">Title</label>
+            <label htmlFor="title" className="text-lg font-medium text-blue-800 mb-2">Title</label>
             <input
               type="text"
               placeholder="Title"
               className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
             />
-                        <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Description</label>
+            <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Description</label>
             <input
               type="text"
               placeholder="Description"
               className="w-full px-4 py-2 mb-3 rounded-md border focus:outline-none"
             />
-                        <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Select Category</label>
+            <label htmlFor="description" className="text-lg font-medium text-blue-800 mb-2">Select Category</label>
             <select className="w-full px-4 py-2 mb-6 rounded-md border focus:outline-none text-gray-700">
               <option value="">Select Category</option>
               {categories.map((cat, i) => (
@@ -140,12 +141,12 @@ const FAQs = () => {
             <div className="flex justify-between">
               <button
                 onClick={() => setShowForm(false)}
-                        className="absolute bottom-5 right-5 bg-white text-gray-700 px-4 py-2 rounded-md shadow border hover:bg-blue-800 hover:text-white"
+                className="absolute bottom-5 right-5 bg-white text-gray-700 px-4 py-2 rounded-md shadow border hover:bg-blue-800 hover:text-white"
               >
                 Cancel
               </button>
               <button
-                        className="absolute bottom-5 left-5 bg-blue-800 text-white px-4 py-2 rounded-md shadow hover:bg-white hover:text-blue-800"
+                className="absolute bottom-5 left-5 bg-blue-800 text-white px-4 py-2 rounded-md shadow hover:bg-white hover:text-blue-800"
               >
                 Submit
               </button>
