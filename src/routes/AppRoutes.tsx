@@ -18,6 +18,7 @@ import Edit from '../components/Edit';
 import ProfileACC from '../NavBarLinks/ProfileACC';
 import HelpCenterNotes from '../components/HelpCenterNotes';
 import EditUserForm from '../components/EditUserForm';
+
 import Institute from '../components/Institute';
 import PersonalInfoForm from '../components/PersonalInfoForm';
 import GalleryInfo from '../components/GalleryInfo';
@@ -55,6 +56,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/subscriptions" element={<SubscriptionPlans />} />
           <Route path="/add-institute" element={<SubscriptionForm />} />
           <Route path="/edituserform" element={<EditUserForm />} />
+          
           <Route path="/personalInfoform" element={<PersonalInfoForm />} />
           <Route path="/galleryInfo" element={<GalleryInfo />} />
           <Route path="/TotalNotifications" element={<TotalNotifications />} />
