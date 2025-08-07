@@ -103,7 +103,7 @@ const EditFaqNotes = () => {
         Status Changed
       </p>
       <Link
-        to="/faq-list"
+        to="/support-tickets"
         className="px-4 py-2 bg-[#0E2B56] text-white rounded-md hover:bg-[#133e7b]"
       >
         OK
