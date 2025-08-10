@@ -21,12 +21,19 @@ import Institute from '../components/Institute';
 import PersonalInfoForm from '../components/PersonalInfoForm';
 import GalleryInfo from '../components/GalleryInfo';
 import TotalNotifications from '../components/TotalNotifications';
-
+import SignIn from '../components/SignIn';
+import ForgotPassword from '../components/ForgotPassword';
+import OtpVerification from '../components/OtpVerification';
+// import AuthPage from '../components/AuthPage';
 
 const AppRoutes: React.FC = () => {
   return (
     <Router>
       <Routes>
+        {/* <Route path='/' element={<AuthPage />} /> */}
+        <Route path='/' element={<SignIn />} />
+        <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/otp-verification' element={<OtpVerification />} />
         <Route element={<LayoutsFile />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
