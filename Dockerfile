@@ -1,6 +1,8 @@
-FROM node:latest
+FROM node:24-alpine3.21
 WORKDIR /app
-copy . .
-RUN apt-get update && apt-get install -y && npm install
-Expose 3000
-CMD ["npm","run","install"]
+COPY package*.json .
+COPY tsconfig*.json .
+RUN npm install
+COPY
+Expose 5173
+CMD [ "npm","run","dev" ]
