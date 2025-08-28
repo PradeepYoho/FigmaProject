@@ -4,5 +4,6 @@ COPY package*.json .
 COPY tsconfig*.json .
 RUN npm install
 COPY . . 
+RUN npm run build
 Expose 5173
-CMD [ "npm","run","dev" ]
+CMD ["npm","start"]
