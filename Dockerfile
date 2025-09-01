@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Build the React app for production
-RUN npm run build
+RUN npm run dev
 
 # Use nginx to serve the build folder
 FROM nginx:alpine
