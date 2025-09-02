@@ -4,26 +4,35 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build:
-    runs-on: amazonlinux2
+    runs-on: self-hosted   # use your EC2 runner label (default: self-hosted)
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
-      - name: Login to dockerhub
-        uses: docker login-u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Build Docker image
         run: docker build -t pradeepr537/pradeep .
+
       - name: Publish image to DockerHub
         run: docker push pradeepr537/pradeep:latest
 
- deploy:
-     needs: build
-     runs-on: aws-ec2
-     steps:
-        - name: pull image from dockerhub
-          run: docker pull pradeepr537/pradeep:latest
-        - name: Delete old container
-          run: docker rm -f reactcontainer
-        - name: Run new container
-          run: docker run -d -p 5173:80 --name reactcontainer pradeepr537/pradeep
+  deploy:
+    needs: build
+    runs-on: self-hosted   # use same runner or give EC2 a custom label
+    steps:
+      - name: Pull image from DockerHub
+        run: docker pull pradeepr537/pradeep:latest
+
+      - name: Delete old container
+        run: docker rm -f reactcontainer || true
+
+      - name: Run new container
+        run: docker run -d -p 5173:80 --name reactcontainer pradeepr537/pradeep
